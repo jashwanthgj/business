@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gowtham S | Legal Scholar</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Georgia', serif;
+    background: #f8f8f8;
+    color: #222;
+}
+
+/* HEADER */
+header {
+    background: #111;
+    color: white;
+    padding: 15px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav h2 {
+    margin: 0;
+    font-size: 20px;
+}
+
+/* NAV MENU */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li {
+    cursor: pointer;
+}
+
+nav ul li:hover {
+    text-decoration: underline;
+}
+
+/* HAMBURGER */
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* SECTIONS */
+section {
+    padding: 50px 20px;
+}
+
+.hero {
+    text-align: center;
+    background: #fff;
+}
+
+.hero h1 {
+    font-size: 32px;
+}
+
+.hero p {
+    color: #555;
+}
+
+/* CARDS */
+.card {
+    background: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-left: 4px solid #111;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+/* HEADINGS */
+h2 {
+    border-bottom: 2px solid #111;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+/* SKILLS */
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.skills span {
+    background: #111;
+    color: white;
+    padding: 8px 12px;
+    margin: 5px;
+    border-radius: 20px;
+    font-size: 13px;
+}
+
+/* CONTACT */
+.contact a {
+    display: block;
+    margin: 8px 0;
+}
+
+/* FOOTER */
+footer {
+    background: #111;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+
+    nav ul {
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: #111;
+        flex-direction: column;
+        width: 200px;
+        display: none;
+        padding: 20px;
+    }
+
+    nav ul.show {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .hero h1 {
+        font-size: 26px;
+    }
+
+    section {
+        padding: 40px 15px;
+    }
+}
+
+/* SMOOTH SCROLL */
+html {
+    scroll-behavior: smooth;
+}
+
+.profile-img {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #111;
+    margin-bottom: 15px;
+}
+
+/* Slightly bigger on desktop */
+@media (min-width: 768px) {
+    .profile-img {
+        width: 160px;
+        height: 160px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+    <nav>
+        <h2>Gowtham S.</h2>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+        <ul id="menu">
+            <li onclick="scrollToSection('about')">About</li>
+            <li onclick="scrollToSection('experience')">Experience</li>
+            <li onclick="scrollToSection('education')">Education</li>
+            <li onclick="scrollToSection('skills')">Skills</li>
+            <li onclick="scrollToSection('contact')">Contact</li>
+        </ul>
+    </nav>
+</header>
+
+<section class="hero">
+    <img src="https://media.licdn.com/dms/image/v2/D5603AQGlejcBGuyEKQ/profile-displayphoto-shrink_400_400/B56ZV5ELLxHEAk-/0/1741492900455?e=2147483647&v=beta&t=OrCTWBxs0pFopYBNSffVUfK4DHeyGqkUXNY4xbUwIfo" alt="Gowtham S" class="profile-img">
+    <h1>Gowtham S.</h1>
+    <p>PhD Scholar | Advocate | Legal Researcher</p>
+    <p>International Economic Law • Litigation • Policy</p>
+</section>
+
+<section id="about">
+    <h2>About</h2>
+    <div class="card">
+        <p>
+        Gowtham S. is a legal professional and interdisciplinary scholar pursuing a PhD in International Economic Law at South Asian University, New Delhi.
+        </p>
+        <p>
+        His expertise spans litigation, research, and policy across criminal, constitutional, corporate, and tax law.
+        </p>
+    </div>
+</section>
+
+<section id="experience">
+    <h2>Experience</h2>
+
+    <div class="card">
+        <h3>Legal Practitioner</h3>
+        <p>Independent Practice (2022–Present)</p>
+    </div>
+
+    <div class="card">
+        <h3>Junior Lawyer</h3>
+        <p>Chamber of Advocate A. Murugan</p>
+    </div>
+
+    <div class="card">
+        <h3>Judicial Intern</h3>
+        <p>Madras High Court & CBI Special Court</p>
+    </div>
+
+</section>
+
+<section id="education">
+    <h2>Education</h2>
+
+    <div class="card">
+        <p>PhD – South Asian University</p>
+        <p>LLM – International Law</p>
+        <p>LLB (Hons)</p>
+        <p>BA English Literature</p>
+        <p>MA Criminology</p>
+        <p>MBA Finance</p>
+    </div>
+
+</section>
+
+<section id="skills">
+    <h2>Skills</h2>
+    <div class="skills">
+        <span>Legal Research</span>
+        <span>Litigation</span>
+        <span>Advocacy</span>
+        <span>Legal Writing</span>
+        <span>Public Speaking</span>
+        <span>Teaching</span>
+    </div>
+</section>
+
+<section id="contact">
+    <h2>Contact</h2>
+    <div class="card contact">
+        <p><strong>Phone:</strong> 8778059515</p>
+        <p><strong>Email:</strong> advgowthammms@gmail.com</p>
+        <a href="https://www.linkedin.com/in/gowtham-5a15361a8" target="_blank">LinkedIn Profile</a>
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 Gowtham S.</p>
+</footer>
+
+<script>
+function scrollToSection(id) {
+    document.getElementById(id).scrollIntoView();
+    document.getElementById("menu").classList.remove("show");
+}
+
+function toggleMenu() {
+    document.getElementById("menu").classList.toggle("show");
+}
+</script>
+
+</body>
+</html>
