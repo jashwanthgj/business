@@ -1,288 +1,892 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gowtham S | Legal Scholar</title>
-
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Siva Sadhanam Trust</title>
+<meta name="description" content="Siva Sadhanam Trust – a Hindu religious trust dedicated to Lord Shiva. Daily puja, festivals, annadana and education seva.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Mukta:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-* {
-    box-sizing: border-box;
+:root{
+  --bg:#FFFBF3; --bg2:#FFF1D9; --card:#FFFFFF; --ink:#3A1B0C; --muted:#75533D;
+  --line:#EBD7AE; --saffron:#C4460A; --saffron-bright:#E2611A; --accent:#A83C08;
+  --gold:#E0AE3A; --gold-deep:#B88718; --temple:#4A1C0A; --wa:#25D366;
+  --serif:"Cormorant Garamond","Iowan Old Style","Palatino Linotype",Georgia,serif;
+  --sans:"Mukta","Segoe UI",system-ui,-apple-system,Roboto,sans-serif;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
 }
-
-body {
-    margin: 0;
-    font-family: 'Georgia', serif;
-    background: #f8f8f8;
-    color: #222;
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#1E0F08; --bg2:#2A150B; --card:#30190E; --ink:#F8EBD2; --muted:#D0B292;
+    --line:#5B3B1F; --accent:#F2B35E;
+  }
 }
-
-/* HEADER */
-header {
-    background: #111;
-    color: white;
-    padding: 15px 20px;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+:root[data-theme="dark"]{
+  --bg:#1E0F08; --bg2:#2A150B; --card:#30190E; --ink:#F8EBD2; --muted:#D0B292;
+  --line:#5B3B1F; --accent:#F2B35E;
 }
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:1.08rem;line-height:1.65;-webkit-text-size-adjust:100%}
+h1,h2,h3,h4{font-family:var(--serif);font-weight:600;line-height:1.15;margin:0 0 .5em;letter-spacing:.005em}
+h2{font-size:clamp(1.9rem,4.5vw,2.7rem)}
+h3{font-size:1.5rem}
+p{margin:0 0 1em;max-width:68ch}
+a{color:var(--accent)}
+img,svg{max-width:100%}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:4px}
+.wrap{width:min(1120px,100% - 2.5rem);margin-inline:auto}
+.skip{position:absolute;left:-999px;top:0;background:var(--gold);color:var(--ink);padding:.6rem 1rem;z-index:100}
+.skip:focus{left:8px;top:8px}
 
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;font:600 1.02rem var(--sans);padding:.75rem 1.5rem;border-radius:999px;border:2px solid transparent;cursor:pointer;text-decoration:none;transition:transform .15s,background .15s,box-shadow .15s;min-height:46px}
+.btn:hover{transform:translateY(-1px)}
+.btn-gold{background:var(--gold);color:#2B1206;box-shadow:0 4px 14px rgba(184,135,24,.35)}
+.btn-gold:hover{background:#EDBC4C}
+.btn-saffron{background:var(--saffron);color:#fff}
+.btn-saffron:hover{background:#D24E0F}
+.btn-ghost{border-color:currentColor;background:transparent;color:inherit}
+.btn-wa{background:var(--wa);color:#08341A}
+.btn-sm{padding:.45rem 1.1rem;font-size:.95rem;min-height:40px}
+
+/* Header */
+header.site{position:sticky;top:0;z-index:50;background:var(--bg);border-bottom:3px solid var(--gold);padding-top:env(safe-area-inset-top,0px)}
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.6rem 0}
+.brand{display:flex;align-items:center;gap:.75rem;text-decoration:none;color:var(--ink)}
+.brand-mark{width:46px;height:46px;border-radius:50%;background:linear-gradient(145deg,var(--saffron),#8F3206);color:var(--gold);display:grid;place-items:center;border:2px solid var(--gold);flex:none}
+.brand-name{font-family:var(--serif);font-size:1.55rem;font-weight:700;line-height:1}
+.brand-sub{display:block;font-size:.78rem;color:var(--muted);font-family:var(--sans);font-weight:400;letter-spacing:.02em}
+.top-actions{display:flex;align-items:center;gap:.6rem}
+.menu-btn{display:none;background:none;border:2px solid var(--line);color:var(--ink);border-radius:10px;width:46px;height:46px;cursor:pointer;font-size:1.4rem;line-height:1}
+nav.main{background:var(--bg2);border-top:1px solid var(--line)}
+nav.main ul{list-style:none;margin:0;padding:0;display:flex;justify-content:center;flex-wrap:wrap;gap:.1rem .35rem}
+nav.main a{display:block;padding:.7rem .85rem;text-decoration:none;color:var(--ink);font-weight:500;font-size:1rem;border-bottom:3px solid transparent}
+nav.main a:hover{color:var(--accent)}
+nav.main a[aria-current="page"]{border-bottom-color:var(--saffron);color:var(--accent);font-weight:600}
+
+/* Hero */
+.hero{position:relative;overflow:hidden;color:#fff;background:linear-gradient(165deg,#8E3006 0%,#B93F08 38%,#D9741C 78%,#E9A73F 100%)}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;align-items:end;gap:1rem;min-height:600px}
+.hero-copy{padding:4.5rem 0 4rem;align-self:center}
+.om{font-size:1.5rem;color:var(--gold);margin-bottom:.4rem;font-family:"Noto Sans Devanagari","Mukta",sans-serif}
+.hero h1{font-size:clamp(2.9rem,8vw,5.3rem);font-weight:700;margin:0 0 .3em;text-shadow:0 2px 18px rgba(60,15,0,.35)}
+.hero p.lead{font-size:1.25rem;color:#FFF3DF;max-width:34ch}
+.hero-cta{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1.8rem}
+.hero-cta .btn-ghost{color:#fff}
+.hero-art{align-self:end;justify-self:center;width:100%;max-width:470px}
+.flame{transform-origin:50% 100%;animation:flicker 2.2s ease-in-out infinite}
+@keyframes flicker{0%,100%{transform:scale(1,1)}40%{transform:scale(.92,1.08)}70%{transform:scale(1.05,.95)}}
+@media (prefers-reduced-motion:reduce){.flame{animation:none}html{scroll-behavior:auto}}
+.hero-border{height:14px;background:repeating-linear-gradient(90deg,var(--gold) 0 18px,#8E3006 18px 24px)}
+
+/* Sections */
+.page{display:none}
+.page.active{display:block}
+.section{padding:4rem 0}
+.section.alt{background:var(--bg2)}
+.page-head{background:linear-gradient(165deg,#8E3006,#B93F08 70%,#D9741C);color:#fff;padding:3.4rem 0 3rem;text-align:center;border-bottom:6px solid var(--gold)}
+.page-head h2{color:#fff;margin:0}
+.page-head p{margin:.6rem auto 0;color:#FFEBD0;font-size:1.15rem;max-width:56ch}
+.divider{display:flex;align-items:center;gap:.8rem;color:var(--gold-deep);margin:.4rem 0 1.6rem}
+.divider::before,.divider::after{content:"";height:2px;flex:1;background:linear-gradient(90deg,transparent,var(--gold))}
+.divider::after{background:linear-gradient(270deg,transparent,var(--gold))}
+.center{text-align:center}.center p{margin-inline:auto}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:start}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:1.6rem}
+.panel.gold{border-top:5px solid var(--gold)}
+.todo{border-bottom:1.5px dashed var(--gold-deep)}
+
+/* Home bits */
+.welcome{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
+.today-list{list-style:none;margin:0;padding:0}
+.today-list li{display:flex;justify-content:space-between;gap:1rem;padding:.7rem 0;border-bottom:1px dashed var(--line)}
+.today-list li:last-child{border:0}
+.today-list b{font-family:var(--serif);font-size:1.25rem;color:var(--accent);white-space:nowrap}
+.causes{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;margin-top:1.6rem}
+.cause{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:1.5rem;text-align:left}
+.cause svg{width:44px;height:44px;color:var(--saffron);margin-bottom:.4rem}
+.blessing{background:var(--temple);color:#FBE9C6;text-align:center;padding:3.6rem 0}
+.blessing h2{color:var(--gold);font-style:italic;font-weight:500}
+.blessing p{margin-inline:auto;color:#F2D9AE}
+
+/* About */
+.timeline{border-left:3px solid var(--gold);padding-left:1.4rem;margin:1.2rem 0 0}
+.timeline div{margin-bottom:1.3rem;position:relative}
+.timeline div::before{content:"";position:absolute;left:-1.95rem;top:.55rem;width:14px;height:14px;border-radius:50%;background:var(--saffron);border:3px solid var(--bg)}
+.timeline b{font-family:var(--serif);font-size:1.3rem;color:var(--accent)}
+.board{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1.2rem}
+.member{text-align:center;padding:1.4rem 1rem;background:var(--card);border:1px solid var(--line);border-radius:14px}
+.avatar{width:84px;height:84px;border-radius:50%;margin:0 auto .7rem;background:linear-gradient(145deg,var(--saffron),#8F3206);color:var(--gold);font:600 1.9rem var(--serif);display:grid;place-items:center;border:3px solid var(--gold)}
+.member h4{margin:0;font-size:1.3rem}.member span{color:var(--muted);font-size:.98rem}
+dl.reg{display:grid;grid-template-columns:max-content 1fr;gap:.6rem 1.6rem;margin:0}
+dl.reg dt{color:var(--muted)}dl.reg dd{margin:0;font-weight:500}
+
+/* Temple */
+table.timings{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+table.timings th,table.timings td{padding:.85rem 1rem;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+table.timings th{background:var(--temple);color:var(--gold);font-family:var(--serif);font-size:1.2rem;font-weight:600}
+table.timings td:first-child{font-family:var(--serif);font-size:1.3rem;font-weight:700;color:var(--accent);white-space:nowrap}
+.tbl-wrap{overflow-x:auto}
+.names{display:flex;flex-wrap:wrap;gap:.5rem;margin:1rem 0 0;padding:0;list-style:none}
+.names li{border:1.5px solid var(--gold);border-radius:999px;padding:.25rem 1rem;background:var(--card);font-family:var(--serif);font-size:1.15rem}
+.mantra{font-family:var(--serif);font-size:1.7rem;color:var(--accent);font-style:italic}
+
+/* Calendar */
+.cal-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:.8rem}
+.cal-head h3{margin:0}
+.cal-nav{display:flex;gap:.4rem}
+.cal-nav button{width:44px;height:44px;border-radius:50%;border:2px solid var(--gold);background:var(--card);color:var(--ink);font-size:1.2rem;cursor:pointer}
+.cal{display:grid;grid-template-columns:repeat(7,1fr);gap:4px}
+.cal .dow{font-weight:600;text-align:center;color:var(--muted);font-size:.9rem;padding:.3rem 0}
+.cal button.day{position:relative;aspect-ratio:1/1;min-height:44px;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:8px;font:500 1rem var(--sans);cursor:pointer;padding:0}
+.cal button.day.blank{visibility:hidden}
+.cal button.day.mon::after{content:"";position:absolute;bottom:6px;left:50%;width:6px;height:6px;margin-left:-3px;border-radius:50%;background:var(--gold)}
+.cal button.day.ev{background:var(--saffron);border-color:var(--saffron);color:#fff;font-weight:600}
+.cal button.day.today{outline:2px solid var(--gold-deep);outline-offset:-3px}
+.cal button.day.sel{box-shadow:0 0 0 3px var(--gold)}
+.legend{display:flex;flex-wrap:wrap;gap:1.2rem;font-size:.95rem;color:var(--muted);margin-top:.9rem}
+.legend i{display:inline-block;width:12px;height:12px;border-radius:50%;margin-right:.4rem;vertical-align:-1px}
+.day-detail{min-height:6rem}
+.ev-item{padding:1rem 0;border-bottom:1px dashed var(--line)}
+.ev-item:last-child{border:0}
+.ev-item h4{margin:0 0 .15em;font-size:1.35rem;color:var(--accent)}
+.ev-date{font-weight:600;color:var(--muted);font-size:.95rem}
+.fest-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1.2rem}
+.fest{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--gold);border-radius:12px;padding:1.2rem 1.3rem}
+.fest h4{margin:0 0 .2em;font-size:1.35rem}.fest p{margin:0;font-size:1rem}
+
+/* Sevas */
+.seva-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.3rem}
+.seva{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:1.5rem;display:flex;flex-direction:column}
+.seva p{flex:1;font-size:1.02rem}
+.seva h3{font-size:1.45rem}
+.seva .when{color:var(--muted);font-size:.95rem;margin-bottom:.8rem}
+
+/* Donate */
+.donate-layout{display:grid;grid-template-columns:1.25fr .75fr;gap:2.2rem;align-items:start}
+form label,.fieldset-title{display:block;font-weight:600;margin:1.1rem 0 .35rem}
+input[type=text],input[type=tel],input[type=email],input[type=number],textarea{width:100%;font:inherit;padding:.75rem .9rem;border:1.5px solid var(--line);border-radius:10px;background:var(--bg);color:var(--ink)}
+textarea{min-height:100px;resize:vertical}
+fieldset{border:0;padding:0;margin:0}
+.choice-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:.6rem}
+.choice{position:relative}
+.choice input{position:absolute;opacity:0;inset:0;cursor:pointer;width:100%;height:100%;margin:0}
+.choice span{display:flex;flex-direction:column;justify-content:center;min-height:56px;padding:.6rem .9rem;border:2px solid var(--line);border-radius:12px;background:var(--bg);font-weight:600;line-height:1.25}
+.choice span small{font-weight:400;color:var(--muted);font-size:.86rem}
+.choice input:checked + span{border-color:var(--saffron);background:var(--bg2);box-shadow:inset 0 0 0 1px var(--saffron)}
+.choice input:focus-visible + span{outline:3px solid var(--gold);outline-offset:2px}
+.amounts{display:flex;flex-wrap:wrap;gap:.5rem}
+.amounts .choice span{min-height:48px;padding:.5rem 1.1rem;align-items:center}
+.rupee{position:relative}.rupee b{position:absolute;left:.9rem;top:50%;transform:translateY(-50%);color:var(--muted)}
+.rupee input{padding-left:2rem}
+.form-note{font-size:.93rem;color:var(--muted)}
+.thanks{display:none;text-align:center}
+.thanks.show{display:block}
+.thanks dl{display:grid;grid-template-columns:max-content 1fr;gap:.4rem 1.2rem;text-align:left;max-width:420px;margin:1rem auto}
+.thanks dt{color:var(--muted)}.thanks dd{margin:0;font-weight:600}
+.pay-box{background:var(--bg2);border:1px dashed var(--gold-deep);border-radius:12px;padding:1rem 1.2rem;text-align:left;margin:1rem auto;max-width:460px}
+
+/* Gallery */
+.filters{display:flex;flex-wrap:wrap;gap:.5rem;justify-content:center;margin-bottom:1.6rem}
+.filters button{font:600 .98rem var(--sans);padding:.5rem 1.2rem;border-radius:999px;border:2px solid var(--gold);background:var(--card);color:var(--ink);cursor:pointer;min-height:42px}
+.filters button[aria-pressed="true"]{background:var(--saffron);border-color:var(--saffron);color:#fff}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:1rem}
+.tile{position:relative;aspect-ratio:4/3;border-radius:12px;overflow:hidden;border:2px solid var(--gold);cursor:pointer;padding:0;display:block;width:100%;color:#fff}
+.tile svg.motif{position:absolute;inset:0;margin:auto;width:52%;height:52%;color:var(--gold)}
+.tile .cap{position:absolute;left:0;right:0;bottom:0;padding:1.5rem .9rem .7rem;background:linear-gradient(transparent,rgba(40,10,0,.85));text-align:left;font-weight:500;font-size:.98rem}
+.tile .badge{position:absolute;top:.6rem;right:.6rem;background:rgba(0,0,0,.55);border-radius:999px;padding:.2rem .7rem;font-size:.85rem}
+.tile:hover{transform:translateY(-2px)}
+dialog{border:3px solid var(--gold);border-radius:16px;padding:0;max-width:min(720px,92vw);width:100%;background:var(--card);color:var(--ink)}
+dialog::backdrop{background:rgba(30,8,0,.75)}
+.lb-art{aspect-ratio:4/3;display:grid;place-items:center;color:var(--gold)}
+.lb-art svg{width:40%;height:40%}
+.lb-body{padding:1.1rem 1.4rem 1.4rem;display:flex;justify-content:space-between;align-items:center;gap:1rem}
+
+/* Contact */
+.contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:2.2rem}
+.contact-list{list-style:none;padding:0;margin:0}
+.contact-list li{display:flex;gap:.9rem;padding:.9rem 0;border-bottom:1px dashed var(--line)}
+.contact-list svg{flex:none;width:26px;height:26px;color:var(--saffron);margin-top:.15rem}
+.map{border:3px solid var(--gold);border-radius:14px;overflow:hidden;background:var(--bg2);aspect-ratio:4/3;min-height:320px}
+.map iframe{width:100%;height:100%;border:0;display:block}
+
+/* Footer + floats */
+footer.site{background:var(--temple);color:#F2D9AE;padding:3rem 0 6.5rem;border-top:6px solid var(--gold)}
+footer .cols{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:2rem}
+footer h4{color:var(--gold);font-size:1.3rem}
+footer a{color:#FBE3B4}
+footer ul{list-style:none;margin:0;padding:0}footer li{margin:.3rem 0}
+footer small{display:block;margin-top:2rem;color:#D9BC8A}
+.float-wa{position:fixed;right:max(16px,env(safe-area-inset-right,0px));bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:60;display:flex;align-items:center;gap:.6rem;background:var(--wa);color:#08341A;text-decoration:none;font-weight:600;padding:.75rem 1.2rem .75rem 1rem;border-radius:999px;box-shadow:0 6px 20px rgba(0,0,0,.3)}
+.float-wa svg{width:28px;height:28px}
+
+@media (max-width:900px){
+  .hero .wrap,.welcome,.split,.donate-layout,.contact-grid,footer .cols{grid-template-columns:1fr}
+  .hero .wrap{min-height:0}.hero-copy{padding:3rem 0 1rem}.hero-art{max-width:340px}
+  .causes{grid-template-columns:1fr}
+  .menu-btn{display:block}
+  nav.main{display:none}
+  nav.main.open{display:block}
+  nav.main ul{flex-direction:column;align-items:stretch}
+  nav.main a{padding:.9rem 1.25rem;border-bottom:1px solid var(--line);border-left:4px solid transparent}
+  nav.main a[aria-current="page"]{border-left-color:var(--saffron);border-bottom-color:var(--line)}
+  .brand-sub{display:none}.brand-name{font-size:1.3rem}
+  .top-actions .phone{display:none}
+  .section{padding:3rem 0}
+  .float-wa span{display:none}.float-wa{padding:.8rem}
 }
-
-nav h2 {
-    margin: 0;
-    font-size: 20px;
-}
-
-/* NAV MENU */
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-}
-
-nav ul li {
-    cursor: pointer;
-}
-
-nav ul li:hover {
-    text-decoration: underline;
-}
-
-/* HAMBURGER */
-.menu-toggle {
-    display: none;
-    font-size: 24px;
-    cursor: pointer;
-}
-
-/* SECTIONS */
-section {
-    padding: 50px 20px;
-}
-
-.hero {
-    text-align: center;
-    background: #fff;
-}
-
-.hero h1 {
-    font-size: 32px;
-}
-
-.hero p {
-    color: #555;
-}
-
-/* CARDS */
-.card {
-    background: white;
-    padding: 20px;
-    margin-bottom: 20px;
-    border-left: 4px solid #111;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-}
-
-/* HEADINGS */
-h2 {
-    border-bottom: 2px solid #111;
-    display: inline-block;
-    margin-bottom: 20px;
-}
-
-/* SKILLS */
-.skills {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.skills span {
-    background: #111;
-    color: white;
-    padding: 8px 12px;
-    margin: 5px;
-    border-radius: 20px;
-    font-size: 13px;
-}
-
-/* CONTACT */
-.contact a {
-    display: block;
-    margin: 8px 0;
-}
-
-/* FOOTER */
-footer {
-    background: #111;
-    color: white;
-    text-align: center;
-    padding: 15px;
-}
-
-/* RESPONSIVE */
-@media (max-width: 768px) {
-
-    nav ul {
-        position: absolute;
-        top: 60px;
-        right: 0;
-        background: #111;
-        flex-direction: column;
-        width: 200px;
-        display: none;
-        padding: 20px;
-    }
-
-    nav ul.show {
-        display: flex;
-    }
-
-    .menu-toggle {
-        display: block;
-    }
-
-    .hero h1 {
-        font-size: 26px;
-    }
-
-    section {
-        padding: 40px 15px;
-    }
-}
-
-/* SMOOTH SCROLL */
-html {
-    scroll-behavior: smooth;
-}
-
-.profile-img {
-    width: 140px;
-    height: 140px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 3px solid #111;
-    margin-bottom: 15px;
-}
-
-/* Slightly bigger on desktop */
-@media (min-width: 768px) {
-    .profile-img {
-        width: 160px;
-        height: 160px;
-    }
-}
-
+@media (max-width:420px){.btn-sm.donate-top{padding:.45rem .9rem}.brand-mark{width:40px;height:40px}}
 </style>
 </head>
-
 <body>
+<a class="skip" href="#main">Skip to content</a>
 
-<header>
-    <nav>
-        <h2>Gowtham S.</h2>
-        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-        <ul id="menu">
-            <li onclick="scrollToSection('about')">About</li>
-            <li onclick="scrollToSection('experience')">Experience</li>
-            <li onclick="scrollToSection('education')">Education</li>
-            <li onclick="scrollToSection('skills')">Skills</li>
-            <li onclick="scrollToSection('contact')">Contact</li>
-        </ul>
-    </nav>
-</header>
-
-<section class="hero">
-    <img src="https://media.licdn.com/dms/image/v2/D5603AQGlejcBGuyEKQ/profile-displayphoto-shrink_400_400/B56ZV5ELLxHEAk-/0/1741492900455?e=2147483647&v=beta&t=OrCTWBxs0pFopYBNSffVUfK4DHeyGqkUXNY4xbUwIfo" alt="Gowtham S" class="profile-img">
-    <h1>Gowtham S.</h1>
-    <p>PhD Scholar | Advocate | Legal Researcher</p>
-    <p>International Economic Law • Litigation • Policy</p>
-</section>
-
-<section id="about">
-    <h2>About</h2>
-    <div class="card">
-        <p>
-        Gowtham S. is a legal professional and interdisciplinary scholar pursuing a PhD in International Economic Law at South Asian University, New Delhi.
-        </p>
-        <p>
-        His expertise spans litigation, research, and policy across criminal, constitutional, corporate, and tax law.
-        </p>
-    </div>
-</section>
-
-<section id="experience">
-    <h2>Experience</h2>
-
-    <div class="card">
-        <h3>Legal Practitioner</h3>
-        <p>Independent Practice (2022–Present)</p>
-    </div>
-
-    <div class="card">
-        <h3>Junior Lawyer</h3>
-        <p>Chamber of Advocate A. Murugan</p>
-    </div>
-
-    <div class="card">
-        <h3>Judicial Intern</h3>
-        <p>Madras High Court & CBI Special Court</p>
-    </div>
-
-</section>
-
-<section id="education">
-    <h2>Education</h2>
-
-    <div class="card">
-        <p>PhD – South Asian University</p>
-        <p>LLM – International Law</p>
-        <p>LLB (Hons)</p>
-        <p>BA English Literature</p>
-        <p>MA Criminology</p>
-        <p>MBA Finance</p>
-    </div>
-
-</section>
-
-<section id="skills">
-    <h2>Skills</h2>
-    <div class="skills">
-        <span>Legal Research</span>
-        <span>Litigation</span>
-        <span>Advocacy</span>
-        <span>Legal Writing</span>
-        <span>Public Speaking</span>
-        <span>Teaching</span>
-    </div>
-</section>
-
-<section id="contact">
-    <h2>Contact</h2>
-    <div class="card contact">
-        <p><strong>Phone:</strong> 8778059515</p>
-        <p><strong>Email:</strong> advgowthammms@gmail.com</p>
-        <a href="https://www.linkedin.com/in/gowtham-5a15361a8" target="_blank">LinkedIn Profile</a>
-    </div>
-</section>
-
-<footer>
-    <p>© 2026 Gowtham S.</p>
-</footer>
-
+<!-- ===== SITE CONFIG: edit these values (also see the EVENTS, BOARD and GALLERY lists in the script) ===== -->
 <script>
-function scrollToSection(id) {
-    document.getElementById(id).scrollIntoView();
-    document.getElementById("menu").classList.remove("show");
-}
-
-function toggleMenu() {
-    document.getElementById("menu").classList.toggle("show");
-}
+const CONFIG = {
+  trust: "Siva Sadhanam Trust",
+  whatsapp: "919999999999",            // country code + number, no + or spaces
+  phoneDisplay: "+91 99999 99999",
+  email: "info@sivasadhanam.example",
+  address: ["Siva Sadhanam Temple", "[Street / Locality]", "[City, State – PIN]"],
+  mapQuery: "Siva Sadhanam Trust",     // put the full temple address here for an exact pin
+  paymentLink: "",                     // paste a payment-gateway / UPI page URL to open it after the form
+  upi: "[trust UPI ID]",
+  bank: "[Bank name · Account name · Account no. · IFSC]"
+};
 </script>
 
+<header class="site">
+  <div class="wrap topbar">
+    <a class="brand" href="#/home" aria-label="Siva Sadhanam Trust – home">
+      <span class="brand-mark" aria-hidden="true">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M12 2v20M12 2l-1.8 3M12 2l1.8 3M5 4c0 6 2 9 7 9s7-3 7-9M5 4l-1 2M19 4l1 2M9 17h6"/></svg>
+      </span>
+      <span class="brand-name">Siva Sadhanam Trust<span class="brand-sub">Devoted to Lord Shiva</span></span>
+    </a>
+    <div class="top-actions">
+      <a class="phone" href="#" data-tel style="text-decoration:none;font-weight:500"></a>
+      <a class="btn btn-gold btn-sm donate-top" href="#/donations">Donate</a>
+      <button class="menu-btn" aria-label="Menu" aria-expanded="false" aria-controls="mainnav">☰</button>
+    </div>
+  </div>
+  <nav class="main" id="mainnav" aria-label="Main">
+    <div class="wrap"><ul>
+      <li><a href="#/home">Home</a></li>
+      <li><a href="#/about">About Us</a></li>
+      <li><a href="#/temple">Temple &amp; Deity</a></li>
+      <li><a href="#/events">Events &amp; Festivals</a></li>
+      <li><a href="#/sevas">Sevas &amp; Services</a></li>
+      <li><a href="#/donations">Donations</a></li>
+      <li><a href="#/gallery">Gallery</a></li>
+      <li><a href="#/contact">Contact</a></li>
+    </ul></div>
+  </nav>
+</header>
+
+<main id="main" tabindex="-1">
+
+<!-- ================= HOME ================= -->
+<section class="page" id="home" data-title="Home">
+  <div class="hero">
+    <div class="wrap">
+      <div class="hero-copy">
+        <div class="om" lang="sa">ॐ नमः शिवाय</div>
+        <h1>Siva Sadhanam Trust</h1>
+        <p class="lead">A home for devotion, service and community at the feet of Lord Shiva. Come as you are. Leave lighter.</p>
+        <div class="hero-cta">
+          <a class="btn btn-gold" href="#/donations">Donate to the temple</a>
+          <a class="btn btn-ghost" href="#/temple">Today’s puja timings</a>
+        </div>
+      </div>
+      <svg class="hero-art" viewBox="0 0 400 470" role="img" aria-label="Illustration of a temple gopuram at sunrise with two lit lamps">
+        <defs>
+          <radialGradient id="sun" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#FFE9A8"/><stop offset=".55" stop-color="#F6B94A" stop-opacity=".85"/><stop offset="1" stop-color="#F6B94A" stop-opacity="0"/></radialGradient>
+          <linearGradient id="tower" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#5A2210"/><stop offset="1" stop-color="#3B1509"/></linearGradient>
+        </defs>
+        <circle cx="200" cy="230" r="190" fill="url(#sun)"/>
+        <!-- gopuram -->
+        <g stroke="#E0AE3A" stroke-width="2" stroke-linejoin="round">
+          <rect x="70" y="392" width="260" height="20" fill="#3B1509"/>
+          <rect x="82" y="372" width="236" height="20" fill="#4A1C0A"/>
+          <rect x="100" y="310" width="200" height="62" fill="url(#tower)"/>
+          <path d="M92 310h216l-12-38H104z" fill="url(#tower)"/>
+          <path d="M108 272h184l-12-36H120z" fill="url(#tower)"/>
+          <path d="M122 236h156l-12-32H134z" fill="url(#tower)"/>
+          <path d="M136 204h128l-12-28H148z" fill="url(#tower)"/>
+          <path d="M150 176h100l-10-24H160z" fill="url(#tower)"/>
+          <path d="M162 152h76c0-22-17-36-38-36s-38 14-38 36z" fill="#4A1C0A"/>
+          <path d="M200 116V98M188 116l-3-14M212 116l3-14" />
+        </g>
+        <g fill="#E0AE3A">
+          <ellipse cx="200" cy="94" rx="5" ry="9"/><ellipse cx="184" cy="100" rx="4" ry="7"/><ellipse cx="216" cy="100" rx="4" ry="7"/>
+          <rect x="128" y="286" width="12" height="16" rx="6"/><rect x="194" y="286" width="12" height="16" rx="6"/><rect x="260" y="286" width="12" height="16" rx="6"/>
+          <rect x="146" y="250" width="10" height="14" rx="5"/><rect x="195" y="250" width="10" height="14" rx="5"/><rect x="244" y="250" width="10" height="14" rx="5"/>
+          <rect x="160" y="216" width="9" height="12" rx="4.5"/><rect x="196" y="216" width="9" height="12" rx="4.5"/><rect x="231" y="216" width="9" height="12" rx="4.5"/>
+        </g>
+        <path d="M170 372v-36c0-16 60-16 60 0v36z" fill="#1E0A03" stroke="#E0AE3A" stroke-width="2"/>
+        <path d="M184 372v-28c0-9 32-9 32 0v28z" fill="#F6B94A" opacity=".85"/>
+        <!-- ground + lamps -->
+        <rect x="0" y="412" width="400" height="58" fill="#2B1206"/>
+        <g>
+          <path d="M60 440h44c0 10-9 16-22 16s-22-6-22-16z" fill="#E0AE3A"/>
+          <path class="flame" d="M82 414c6 8 7 12 0 20-7-8-6-12 0-20z" fill="#FFE08A"/>
+          <path d="M296 440h44c0 10-9 16-22 16s-22-6-22-16z" fill="#E0AE3A"/>
+          <path class="flame" style="animation-delay:-1.1s" d="M318 414c6 8 7 12 0 20-7-8-6-12 0-20z" fill="#FFE08A"/>
+        </g>
+      </svg>
+    </div>
+    <div class="hero-border" aria-hidden="true"></div>
+  </div>
+
+  <div class="section">
+    <div class="wrap welcome">
+      <div>
+        <h2>Welcome, dear devotees</h2>
+        <p>Siva Sadhanam Trust exists so that every family in our community has a place to sit quietly before Lord Shiva, to offer a lamp, and to feel held by something larger than the day’s worries.</p>
+        <p>Here the bell rings at dawn and the lamps are lit at dusk. Elders share stories, children learn the shlokas, and no one who comes hungry leaves without prasadam. Everything we do is made possible by devotees like you.</p>
+        <p><a class="btn btn-saffron" href="#/about">Read our story</a></p>
+      </div>
+      <div class="panel gold">
+        <h3>Daily puja at the temple</h3>
+        <ul class="today-list">
+          <li><span>Ushakala Abhishekam</span><b>6:30 AM</b></li>
+          <li><span>Uchikala Puja</span><b>12:00 PM</b></li>
+          <li><span>Sayarakshai Deepa Aradhana</span><b>6:00 PM</b></li>
+          <li><span>Arthajama Puja &amp; Aarti</span><b>8:00 PM</b></li>
+        </ul>
+        <p class="form-note" style="margin:.8rem 0 0">Timings may change on festival days. <a href="#/temple">See the full schedule</a>.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section alt">
+    <div class="wrap">
+      <div class="center"><h2>Three ways to serve</h2><p>Every offering, large or small, keeps the lamps burning and the kitchen warm.</p></div>
+      <div class="causes">
+        <div class="cause">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round" aria-hidden="true"><path d="M8 40h32M12 40V22M36 40V22M6 22L24 8l18 14zM20 40V30h8v10"/></svg>
+          <h3>Temple maintenance</h3><p>Daily worship, oil and flowers, repairs, and care of the sanctum and grounds.</p>
+          <a href="#/donations" data-cat="Temple maintenance">Give for the temple</a>
+        </div>
+        <div class="cause">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round" aria-hidden="true"><path d="M6 24h36c0 10-8 16-18 16S6 34 6 24zM14 24c0-6 4-8 10-8s10 2 10 8M24 8v4M17 10l1.5 3M31 10l-1.5 3"/></svg>
+          <h3>Annadana</h3><p>Sacred food offered freely to devotees and to anyone who arrives hungry.</p>
+          <a href="#/donations" data-cat="Annadana">Give for annadana</a>
+        </div>
+        <div class="cause">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round" aria-hidden="true"><path d="M4 18L24 8l20 10-20 10zM12 23v10c0 4 6 7 12 7s12-3 12-7V23M44 18v12"/></svg>
+          <h3>Education</h3><p>Books, fees and mentoring for children, and classes in Vedic chanting and our traditions.</p>
+          <a href="#/donations" data-cat="Education">Give for education</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="wrap">
+      <h2>Coming up at the temple</h2>
+      <div class="divider" aria-hidden="true">✦</div>
+      <div id="home-events" class="panel"></div>
+      <p style="margin-top:1.2rem"><a href="#/events">Open the full festival calendar</a></p>
+    </div>
+  </div>
+
+  <div class="blessing">
+    <div class="wrap">
+      <h2>Om Namah Shivaya</h2>
+      <p>May Mahadeva bless you and your family with peace, health and a steady heart. We look forward to seeing you at the temple.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ABOUT ================= -->
+<section class="page" id="about" data-title="About Us">
+  <div class="page-head"><div class="wrap"><h2>About Us</h2><p>A community gathered around a simple wish: to keep Lord Shiva’s worship alive and to serve those around us.</p></div></div>
+  <div class="section">
+    <div class="wrap split">
+      <div>
+        <h2>Our story</h2>
+        <p>Siva Sadhanam Trust began when a few devotees started meeting to chant, light lamps and share a meal. What was a small gathering grew into a temple and a trust, held together by volunteers and by the generosity of families who kept returning.</p>
+        <p>Today the trust runs daily worship, celebrates Shiva’s festivals with the whole community, serves annadana, and supports the education of children. We see worship and service as one practice.</p>
+        <div class="timeline">
+          <div><b class="todo">[Year]</b><br>Devotees begin regular gatherings for Shiva puja and bhajans.</div>
+          <div><b class="todo">[Year]</b><br>The trust is formed and the temple sanctum is established.</div>
+          <div><b class="todo">[Year]</b><br>Annadana and education seva begin.</div>
+          <div><b>Today</b><br>Daily puja, festival celebrations and a growing family of devotees.</div>
+        </div>
+      </div>
+      <div>
+        <div class="panel gold">
+          <h3>Our purpose</h3>
+          <p>To preserve and share the worship of Lord Shiva, to feed the hungry, to educate the young, and to be a welcoming home for every devotee, regardless of background.</p>
+          <h3 style="margin-top:1.2rem">Registration details</h3>
+          <dl class="reg">
+            <dt>Registered as</dt><dd class="todo">[Public Charitable Trust]</dd>
+            <dt>Registration no.</dt><dd class="todo">[Registration number]</dd>
+            <dt>Date of registration</dt><dd class="todo">[DD / MM / YYYY]</dd>
+            <dt>PAN</dt><dd class="todo">[Trust PAN]</dd>
+            <dt>Tax exemption</dt><dd class="todo">[12A / 80G details, if applicable]</dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="section alt">
+    <div class="wrap">
+      <div class="center"><h2>Board of trustees</h2><p>Devotees who give their time freely to guide and care for the temple.</p></div>
+      <div class="board" id="board"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TEMPLE ================= -->
+<section class="page" id="temple" data-title="Temple &amp; Deity">
+  <div class="page-head"><div class="wrap"><h2>Temple &amp; Deity</h2><p>Sit a while in the presence of Mahadeva.</p></div></div>
+  <div class="section">
+    <div class="wrap split">
+      <div>
+        <h2>Lord Shiva</h2>
+        <p>Shiva is Mahadeva, the great God: destroyer of ignorance, lord of yogis, and the gentlest giver to those who call on him with a sincere heart. He is worshipped as the Shiva Linga, the formless symbol of the infinite, and as Nataraja, the Lord of the cosmic dance.</p>
+        <p>The crescent moon on his brow speaks of calm, the Ganga flowing from his hair of grace, and the blue throat of Neelakantha of his compassion, for he held the world’s poison so that others might live.</p>
+        <p class="mantra" lang="sa">ॐ नमः शिवाय</p>
+        <p>The five-syllable mantra <em>Na-Ma-Shi-Va-Ya</em> can be chanted anywhere, by anyone, at any hour.</p>
+        <ul class="names" aria-label="Names of Lord Shiva">
+          <li>Mahadeva</li><li>Neelakantha</li><li>Nataraja</li><li>Bholenath</li><li>Shankara</li><li>Chandrashekhara</li>
+        </ul>
+      </div>
+      <div class="panel gold">
+        <h3>Visiting the temple</h3>
+        <ul style="padding-left:1.2rem;margin:0">
+          <li>Darshan is open to all devotees.</li>
+          <li>Please remove footwear before the entrance and dress modestly.</li>
+          <li>Bilva leaves, flowers, milk and fruit may be offered at the abhishekam counter.</li>
+          <li>Prasadam is served after the evening aarti.</li>
+          <li>Elders and children are welcome to sit in the mandapam.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="section alt">
+    <div class="wrap">
+      <h2>Daily puja timings</h2>
+      <div class="divider" aria-hidden="true">✦</div>
+      <div class="tbl-wrap">
+      <table class="timings">
+        <thead><tr><th scope="col">Time</th><th scope="col">Puja</th><th scope="col">What happens</th></tr></thead>
+        <tbody>
+          <tr><td>5:30 AM</td><td>Suprabhatam</td><td>The temple opens with morning hymns and the first darshan.</td></tr>
+          <tr><td>6:30 AM</td><td>Ushakala Abhishekam</td><td>Sacred bathing of the Linga with milk, water and holy offerings.</td></tr>
+          <tr><td>8:00 AM</td><td>Morning Archana</td><td>Names of Shiva are chanted; archana in devotees’ names.</td></tr>
+          <tr><td>12:00 PM</td><td>Uchikala Puja</td><td>Midday worship and naivedyam. Temple closes after aarti.</td></tr>
+          <tr><td>5:00 PM</td><td>Temple reopens</td><td>Evening darshan and quiet prayer.</td></tr>
+          <tr><td>6:00 PM</td><td>Sayarakshai Deepa Aradhana</td><td>Lamps are lit at dusk, with Panchakshara japa.</td></tr>
+          <tr><td>8:00 PM</td><td>Arthajama Puja &amp; Aarti</td><td>The final worship of the day, followed by prasadam.</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <p class="form-note" style="margin-top:1rem">On Mondays, Pradosham evenings and festival days, timings may be extended. Please confirm on <a data-wa="Namaste, may I confirm today's puja timings?" href="#">WhatsApp</a>.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= EVENTS ================= -->
+<section class="page" id="events" data-title="Events &amp; Festivals">
+  <div class="page-head"><div class="wrap"><h2>Events &amp; Festivals</h2><p>Come celebrate with the community. Everyone is welcome.</p></div></div>
+  <div class="section">
+    <div class="wrap split">
+      <div>
+        <div class="cal-head">
+          <h3 id="cal-title" aria-live="polite"></h3>
+          <div class="cal-nav">
+            <button id="cal-prev" aria-label="Previous month">‹</button>
+            <button id="cal-next" aria-label="Next month">›</button>
+          </div>
+        </div>
+        <div class="cal" id="cal" role="grid" aria-labelledby="cal-title"></div>
+        <div class="legend"><span><i style="background:var(--saffron)"></i>Festival or special puja</span><span><i style="background:var(--gold)"></i>Monday Somavara abhishekam</span></div>
+      </div>
+      <div>
+        <div class="panel gold day-detail" id="day-detail" aria-live="polite"></div>
+        <h3 style="margin-top:1.6rem">Upcoming</h3>
+        <div id="upcoming"></div>
+      </div>
+    </div>
+  </div>
+  <div class="section alt">
+    <div class="wrap">
+      <h2>Festivals we celebrate</h2>
+      <div class="divider" aria-hidden="true">✦</div>
+      <div class="fest-grid">
+        <div class="fest"><h4>Maha Shivaratri</h4><p>The Great Night of Shiva. Devotees fast and keep an all-night vigil with four prahar pujas, abhishekam and bhajans.</p></div>
+        <div class="fest"><h4>Pradosham</h4><p>Observed twice every lunar month on Trayodashi. Special abhishekam and worship of Nandi and Shiva at twilight.</p></div>
+        <div class="fest"><h4>Karthigai Deepam</h4><p>The festival of lights, when rows of lamps are lit around the temple in honour of Shiva as endless flame.</p></div>
+        <div class="fest"><h4>Thiruvathirai</h4><p>Arudra Darshan of Lord Nataraja in the month of Margazhi, with special abhishekam at dawn.</p></div>
+        <div class="fest"><h4>Annabhishekam</h4><p>The Linga is adorned with cooked rice, then shared as prasadam with all devotees.</p></div>
+        <div class="fest"><h4>Karthika Masa Somavaram</h4><p>Mondays of the sacred month of Karthika, with lamp offerings and special archana.</p></div>
+      </div>
+      <p class="form-note" style="margin-top:1.2rem">Festival dates follow the Hindu panchang and shift each year. We update this calendar as dates are confirmed.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SEVAS ================= -->
+<section class="page" id="sevas" data-title="Sevas &amp; Services">
+  <div class="page-head"><div class="wrap"><h2>Sevas &amp; Services</h2><p>Offer worship in your family’s name, or mark a life occasion with Shiva’s blessing.</p></div></div>
+  <div class="section">
+    <div class="wrap">
+      <div class="seva-grid" id="seva-grid"></div>
+      <p class="form-note" style="margin-top:1.4rem">Tell us your name, gotra and nakshatra when you book, and the priests will offer the sankalpam on your behalf. Seva contributions are shared when you enquire.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= DONATIONS ================= -->
+<section class="page" id="donations" data-title="Donations">
+  <div class="page-head"><div class="wrap"><h2>Donations</h2><p>Your offering keeps the lamps lit, the kitchen open and the classroom full. Thank you for giving.</p></div></div>
+  <div class="section">
+    <div class="wrap donate-layout">
+      <div class="panel gold">
+        <form id="donate-form" novalidate>
+          <fieldset>
+            <legend class="fieldset-title" style="padding:0;margin-top:0">Where would you like your gift to go?</legend>
+            <div class="choice-grid">
+              <label class="choice"><input type="radio" name="cat" value="Temple maintenance" checked><span>Temple maintenance<small>Worship, upkeep, repairs</small></span></label>
+              <label class="choice"><input type="radio" name="cat" value="Annadana"><span>Annadana<small>Free meals for all</small></span></label>
+              <label class="choice"><input type="radio" name="cat" value="Education"><span>Education<small>Learning for children</small></span></label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend class="fieldset-title">Amount</legend>
+            <div class="amounts">
+              <label class="choice"><input type="radio" name="amt" value="501"><span>₹501</span></label>
+              <label class="choice"><input type="radio" name="amt" value="1001" checked><span>₹1,001</span></label>
+              <label class="choice"><input type="radio" name="amt" value="2501"><span>₹2,501</span></label>
+              <label class="choice"><input type="radio" name="amt" value="5001"><span>₹5,001</span></label>
+              <label class="choice"><input type="radio" name="amt" value="other"><span>Other</span></label>
+            </div>
+            <div class="rupee" id="other-wrap" hidden style="margin-top:.7rem"><b>₹</b><input type="number" id="other-amt" min="1" inputmode="numeric" placeholder="Enter amount" aria-label="Other amount in rupees"></div>
+          </fieldset>
+          <fieldset>
+            <legend class="fieldset-title">How often?</legend>
+            <div class="choice-grid">
+              <label class="choice"><input type="radio" name="freq" value="One-time" checked><span>One-time</span></label>
+              <label class="choice"><input type="radio" name="freq" value="Monthly"><span>Monthly</span></label>
+            </div>
+          </fieldset>
+          <label for="d-name">Full name</label>
+          <input type="text" id="d-name" autocomplete="name" required>
+          <label for="d-phone">Mobile number</label>
+          <input type="tel" id="d-phone" autocomplete="tel" inputmode="tel" required>
+          <label for="d-email">Email <span class="form-note">(for your receipt)</span></label>
+          <input type="email" id="d-email" autocomplete="email">
+          <label for="d-note">Sankalpam or message <span class="form-note">(optional: gotra, nakshatra, or a prayer)</span></label>
+          <textarea id="d-note"></textarea>
+          <p id="d-error" role="alert" style="color:#B3261E;font-weight:600;margin:.8rem 0 0" hidden></p>
+          <p style="margin-top:1.4rem"><button class="btn btn-gold" type="submit" style="width:100%;font-size:1.15rem">Continue with my donation</button></p>
+          <p class="form-note">You will see the payment details on the next step.</p>
+        </form>
+        <div class="thanks" id="thanks" tabindex="-1">
+          <h3>Om Namah Shivaya. Thank you, <span id="t-name"></span>.</h3>
+          <p style="margin-inline:auto">Your offering will be used with care. Please complete your payment, then send us a message so we can issue your receipt.</p>
+          <dl>
+            <dt>Gift for</dt><dd id="t-cat"></dd>
+            <dt>Amount</dt><dd id="t-amt"></dd>
+            <dt>Frequency</dt><dd id="t-freq"></dd>
+          </dl>
+          <div class="pay-box">
+            <b>Pay by UPI</b><br><span class="todo" id="t-upi"></span><br><br>
+            <b>Bank transfer</b><br><span class="todo" id="t-bank"></span>
+          </div>
+          <p style="display:flex;gap:.7rem;justify-content:center;flex-wrap:wrap">
+            <a class="btn btn-wa" id="t-wa" href="#" target="_blank" rel="noopener">Send confirmation on WhatsApp</a>
+            <button class="btn btn-ghost" id="t-again" type="button">Make another gift</button>
+          </p>
+        </div>
+      </div>
+      <aside>
+        <div class="panel">
+          <h3>Where your gift goes</h3>
+          <p><b>Temple maintenance.</b> Daily puja materials, lamps and oil, flowers, repairs and upkeep of the sanctum.</p>
+          <p><b>Annadana.</b> Prasadam and meals served to devotees and to anyone in need.</p>
+          <p style="margin:0"><b>Education.</b> Books, school fees, mentoring and Vedic classes for children.</p>
+        </div>
+        <div class="panel" style="margin-top:1.2rem">
+          <h3>Prefer to give in person?</h3>
+          <p style="margin:0">Visit the temple office during darshan hours or <a href="#/contact">contact us</a>. We are glad to help you with any offering or seva.</p>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ================= GALLERY ================= -->
+<section class="page" id="gallery" data-title="Gallery">
+  <div class="page-head"><div class="wrap"><h2>Gallery</h2><p>Moments of worship, celebration and service from our temple family.</p></div></div>
+  <div class="section">
+    <div class="wrap">
+      <div class="filters" id="filters" role="group" aria-label="Filter gallery"></div>
+      <div class="gallery" id="gallery-grid"></div>
+    </div>
+  </div>
+  <dialog id="lightbox" aria-label="Gallery item">
+    <div class="lb-art" id="lb-art"></div>
+    <div class="lb-body"><div><b id="lb-cap"></b><br><span class="form-note" id="lb-sub"></span></div><button class="btn btn-saffron btn-sm" id="lb-close" type="button">Close</button></div>
+  </dialog>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section class="page" id="contact" data-title="Contact">
+  <div class="page-head"><div class="wrap"><h2>Contact</h2><p>We would love to hear from you. Write, call or visit.</p></div></div>
+  <div class="section">
+    <div class="wrap contact-grid">
+      <div>
+        <ul class="contact-list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 22s7-6.5 7-12a7 7 0 1 0-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg><div><b>Address</b><br><span id="c-address" class="todo"></span></div></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg><div><b>Phone</b><br><a id="c-phone" href="#"></a></div></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg><div><b>Email</b><br><a id="c-email" href="#"></a></div></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><div><b>Darshan hours</b><br>5:30 AM – 12:30 PM and 5:00 PM – 8:30 PM</div></li>
+        </ul>
+        <p style="margin-top:1.3rem;display:flex;gap:.7rem;flex-wrap:wrap">
+          <a class="btn btn-wa" data-wa="Namaste, I would like to know more about Siva Sadhanam Trust." href="#" target="_blank" rel="noopener">Chat on WhatsApp</a>
+          <a class="btn btn-saffron" id="c-directions" href="#" target="_blank" rel="noopener">Get directions</a>
+        </p>
+        <div class="panel" style="margin-top:1.4rem">
+          <h3>Send us a message</h3>
+          <form id="contact-form">
+            <label for="m-name" style="margin-top:0">Your name</label>
+            <input type="text" id="m-name" autocomplete="name">
+            <label for="m-msg">Message</label>
+            <textarea id="m-msg"></textarea>
+            <p style="margin:1rem 0 0"><button class="btn btn-gold" type="submit">Send via WhatsApp</button></p>
+          </form>
+        </div>
+      </div>
+      <div>
+        <div class="map"><iframe id="map" title="Map showing the temple location" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></div>
+        <p class="form-note" style="margin-top:.7rem">If the map does not load, use <b>Get directions</b> to open it in Google Maps.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap cols">
+    <div>
+      <h4>Siva Sadhanam Trust</h4>
+      <p>A Hindu religious trust dedicated to Lord Shiva. Worship, festivals, annadana and education, open to all.</p>
+      <p class="mantra" style="color:var(--gold);margin:0" lang="sa">ॐ नमः शिवाय</p>
+    </div>
+    <div>
+      <h4>Explore</h4>
+      <ul>
+        <li><a href="#/about">About Us</a></li><li><a href="#/temple">Temple &amp; Deity</a></li><li><a href="#/events">Events &amp; Festivals</a></li><li><a href="#/sevas">Sevas &amp; Services</a></li><li><a href="#/gallery">Gallery</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Reach us</h4>
+      <ul>
+        <li><a href="#/donations">Donate</a></li><li><a href="#/contact">Contact &amp; map</a></li><li><a href="#" data-tel-link></a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap"><small>© <span id="yr"></span> Siva Sadhanam Trust. Registration no. <span class="todo">[add]</span>. All offerings are used for temple worship, annadana and education.</small></div>
+</footer>
+
+<a class="float-wa" data-wa="Namaste, I would like to know more about Siva Sadhanam Trust." href="#" target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp">
+  <svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16 3A13 13 0 0 0 4.9 22.7L3 29l6.5-1.7A13 13 0 1 0 16 3zm0 2.6A10.4 10.4 0 1 1 10.7 25l-.4-.2-3 .8.8-2.9-.3-.4A10.4 10.4 0 0 1 16 5.6z"/><path d="M12.3 10c-.5 0-1 .4-1.2 1-.4 1.5.6 3.5 2.3 5.2S17.2 19 18.700 18.500c.6-.2 1-.7 1-1.200l-2.200-1.100-1 1c-1.400-.5-3.200-2.300-3.800-3.800l1-1z"/></svg>
+  <span>Chat on WhatsApp</span>
+</a>
+
+<script>
+/* ---------- Editable content ---------- */
+const BOARD = [
+  {name:"Shri [Name]", role:"President"},
+  {name:"Smt. [Name]", role:"Vice President"},
+  {name:"Shri [Name]", role:"Secretary"},
+  {name:"Shri [Name]", role:"Treasurer"},
+  {name:"Smt. [Name]", role:"Trustee"},
+  {name:"Shri [Name]", role:"Trustee"}
+];
+
+/* Add one line per special date. Pradosham falls twice a month: add each date from your panchang. */
+const EVENTS = [
+  {date:"2026-12-21", title:"Soma Pradosham", time:"Evening, at Pradosha Kalam", desc:"Pradosham falling on a Monday is especially dear to Shiva devotees. Abhishekam and deepa aradhana at twilight, followed by prasadam."},
+  {date:"2027-03-06", title:"Maha Shivaratri", time:"Evening through the night", desc:"The Great Night of Shiva. Four prahar pujas, abhishekam, bhajans and a night-long vigil. Fasting devotees break their fast the next morning."}
+];
+
+const SEVAS = [
+  {name:"Abhishekam", when:"Daily, 6:30 AM", text:"Sacred bathing of the Shiva Linga with milk, honey, water and other offerings, in your family’s name."},
+  {name:"Archana", when:"Daily", text:"Chanting of Shiva’s names with your name, gotra and nakshatra for health, peace and blessings."},
+  {name:"Rudrabhishekam", when:"By appointment", text:"Abhishekam with the Sri Rudram, offered for special occasions, birthdays and new beginnings."},
+  {name:"Pradosham Puja", when:"Twice a month, at dusk", text:"Join or sponsor the twilight worship of Shiva and Nandi on Trayodashi."},
+  {name:"Deepa Seva", when:"Daily and on festivals", text:"Offer lamps before the Lord. A simple, beautiful way to remember loved ones."},
+  {name:"Annadana Seva", when:"Daily and on festivals", text:"Sponsor a meal of prasadam for devotees, in honour of a loved one or an occasion."},
+  {name:"Life-event ceremonies", when:"By appointment", text:"Naming ceremonies, first rice, griha pravesh and other samskaras conducted by our priests."},
+  {name:"Bhajans &amp; satsang", when:"Weekly", text:"Sing, chant and learn together. Children and elders alike are welcome to join."}
+];
+
+const GALLERY = [
+  {t:"photo", cat:"Temple", cap:"Morning abhishekam", g:["#8E3006","#D9741C"], m:"diya"},
+  {t:"photo", cat:"Temple", cap:"The gopuram at sunrise", g:["#4A1C0A","#B93F08"], m:"trishul"},
+  {t:"photo", cat:"Festivals", cap:"Maha Shivaratri vigil", g:["#2B1206","#A83C08"], m:"om"},
+  {t:"video", cat:"Festivals", cap:"Pradosham aarti", g:["#B93F08","#E9A73F"], m:"diya"},
+  {t:"photo", cat:"Annadana", cap:"Prasadam being served", g:["#A83C08","#E0AE3A"], m:"lotus"},
+  {t:"photo", cat:"Festivals", cap:"Karthigai Deepam lamps", g:["#3A1B0C","#C4460A"], m:"diya"},
+  {t:"video", cat:"Temple", cap:"Evening bhajans", g:["#6B2508","#D9741C"], m:"om"},
+  {t:"photo", cat:"Annadana", cap:"Volunteers in the kitchen", g:["#8E3006","#E9A73F"], m:"lotus"}
+];
+/* To use real photos: add  src:"data:image/jpeg;base64,..."  to an item (published pages can’t load images from other websites). */
+
+/* ---------- Helpers ---------- */
+const $ = (s,r=document)=>r.querySelector(s), $$ = (s,r=document)=>[...r.querySelectorAll(s)];
+const wa = t => `https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(t)}`;
+const MOTIFS = {
+  diya:'<svg class="motif" viewBox="0 0 100 100" aria-hidden="true"><path d="M14 58h72c0 16-14 26-36 26S14 74 14 58z" fill="currentColor"/><path d="M50 16c10 12 12 20 0 32-12-12-10-20 0-32z" fill="#FFE08A"/></svg>',
+  lotus:'<svg class="motif" viewBox="0 0 100 100" aria-hidden="true" fill="currentColor"><path d="M50 22c12 12 12 34 0 50-12-16-12-38 0-50z"/><path d="M26 34c16 2 26 16 24 38-18-4-28-18-24-38z" opacity=".8"/><path d="M74 34c-16 2-26 16-24 38 18-4 28-18 24-38z" opacity=".8"/><path d="M14 56c14 0 26 8 36 16-14 8-30 6-36-16z" opacity=".6"/><path d="M86 56c-14 0-26 8-36 16 14 8 30 6 36-16z" opacity=".6"/></svg>',
+  trishul:'<svg class="motif" viewBox="0 0 100 100" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"><path d="M50 8v86M50 8l-6 10M50 8l6 10M22 16c0 26 8 38 28 38s28-12 28-38M22 16l-4 8M78 16l4 8M40 72h20"/></svg>',
+  om:'<svg class="motif" viewBox="0 0 100 100" aria-hidden="true"><text x="50" y="74" text-anchor="middle" font-size="76" fill="currentColor" font-family="Noto Sans Devanagari,Mukta,sans-serif">ॐ</text></svg>'
+};
+
+/* ---------- Router ---------- */
+const PAGES = $$('.page');
+function route(){
+  let id = (location.hash.replace(/^#\/?/,'') || 'home').split('?')[0];
+  if(!PAGES.some(p=>p.id===id)) id='home';
+  PAGES.forEach(p=>p.classList.toggle('active',p.id===id));
+  $$('nav.main a').forEach(a=>a.getAttribute('href')==='#/'+id ? a.setAttribute('aria-current','page') : a.removeAttribute('aria-current'));
+  const pg = $('#'+id);
+  document.title = (id==='home' ? '' : pg.dataset.title.replace(/&amp;/g,'&')+' · ')+'Siva Sadhanam Trust';
+  closeMenu();
+  window.scrollTo(0,0);
+}
+window.addEventListener('hashchange',route);
+
+const menuBtn=$('.menu-btn'), nav=$('#mainnav');
+function closeMenu(){nav.classList.remove('open');menuBtn.setAttribute('aria-expanded','false');menuBtn.textContent='☰'}
+menuBtn.addEventListener('click',()=>{const o=nav.classList.toggle('open');menuBtn.setAttribute('aria-expanded',o);menuBtn.textContent=o?'✕':'☰'});
+
+/* ---------- Static fills ---------- */
+$$('[data-wa]').forEach(a=>a.href=wa(a.dataset.wa));
+$$('[data-tel]').forEach(a=>{a.href='tel:+'+CONFIG.whatsapp;a.textContent=CONFIG.phoneDisplay});
+$$('[data-tel-link]').forEach(a=>{a.href='tel:+'+CONFIG.whatsapp;a.textContent=CONFIG.phoneDisplay});
+$('#c-phone').href='tel:+'+CONFIG.whatsapp; $('#c-phone').textContent=CONFIG.phoneDisplay;
+$('#c-email').href='mailto:'+CONFIG.email; $('#c-email').textContent=CONFIG.email;
+$('#c-address').innerHTML=CONFIG.address.join('<br>');
+$('#yr').textContent=new Date().getFullYear();
+const mq=encodeURIComponent(CONFIG.mapQuery);
+$('#map').src=`https://www.google.com/maps?q=${mq}&output=embed`;
+$('#c-directions').href=`https://www.google.com/maps/search/?api=1&query=${mq}`;
+
+$('#board').innerHTML = BOARD.map(b=>{
+  const ini=(b.name.replace(/^(Shri|Smt\.)\s*/,'')[0]||'S').replace('[','S');
+  return `<div class="member"><div class="avatar" aria-hidden="true">${ini}</div><h4><span class="todo">${b.name}</span></h4><span>${b.role}</span></div>`;
+}).join('');
+
+$('#seva-grid').innerHTML = SEVAS.map(s=>`<article class="seva"><h3>${s.name}</h3><div class="when">${s.when}</div><p>${s.text}</p><a class="btn btn-ghost btn-sm" style="color:var(--accent)" target="_blank" rel="noopener" href="${wa('Namaste, I would like to book: '+s.name.replace(/&amp;/g,'&'))}">Book on WhatsApp</a></article>`).join('');
+
+/* ---------- Events + calendar ---------- */
+const fmt = d => new Date(d+'T00:00:00').toLocaleDateString('en-IN',{weekday:'long',day:'numeric',month:'long',year:'numeric'});
+const iso = (y,m,d)=>`${y}-${String(m+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
+const now = new Date(); const todayISO = iso(now.getFullYear(),now.getMonth(),now.getDate());
+let cur = {y:now.getFullYear(), m:now.getMonth()}, sel = null;
+
+function evHTML(e){return `<div class="ev-item"><div class="ev-date">${fmt(e.date)}</div><h4>${e.title}</h4><div class="form-note" style="margin-bottom:.3rem">${e.time}</div><p style="margin:0;font-size:1rem">${e.desc}</p></div>`}
+function detail(dateISO){
+  const list = EVENTS.filter(e=>e.date===dateISO);
+  const isMon = new Date(dateISO+'T00:00:00').getDay()===1;
+  let h = `<h3 style="margin-bottom:.3rem">${fmt(dateISO)}</h3>`;
+  if(list.length) h += list.map(evHTML).join('');
+  if(isMon) h += `<div class="ev-item"><h4>Somavara Abhishekam</h4><p style="margin:0;font-size:1rem">Mondays are dedicated to Lord Shiva. Special abhishekam and lamp offerings through the day.</p></div>`;
+  if(!list.length && !isMon) h += `<p style="margin:.4rem 0 0">Regular daily puja. See the <a href="#/temple">timings</a>.</p>`;
+  $('#day-detail').innerHTML = h;
+}
+function renderCal(){
+  const {y,m}=cur, first=new Date(y,m,1).getDay(), days=new Date(y,m+1,0).getDate();
+  $('#cal-title').textContent = new Date(y,m,1).toLocaleDateString('en-IN',{month:'long',year:'numeric'});
+  let h = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'].map(d=>`<div class="dow" role="columnheader">${d}</div>`).join('');
+  for(let i=0;i<first;i++) h+='<button class="day blank" tabindex="-1" aria-hidden="true"></button>';
+  for(let d=1;d<=days;d++){
+    const k=iso(y,m,d), ev=EVENTS.some(e=>e.date===k), mon=new Date(y,m,d).getDay()===1;
+    const cls=['day',ev?'ev':'',mon?'mon':'',k===todayISO?'today':'',k===sel?'sel':''].join(' ');
+    const label = fmt(k)+(ev?', festival or special puja':'')+(mon?', Somavara abhishekam':'');
+    h+=`<button class="${cls}" data-d="${k}" aria-label="${label}" role="gridcell">${d}</button>`;
+  }
+  $('#cal').innerHTML=h;
+}
+$('#cal').addEventListener('click',e=>{const b=e.target.closest('button[data-d]');if(!b)return;sel=b.dataset.d;renderCal();detail(sel);$('#cal button.sel')?.focus()});
+$('#cal-prev').onclick=()=>{cur.m--;if(cur.m<0){cur.m=11;cur.y--}renderCal()};
+$('#cal-next').onclick=()=>{cur.m++;if(cur.m>11){cur.m=0;cur.y++}renderCal()};
+renderCal(); sel=todayISO; renderCal(); detail(todayISO);
+
+const upcoming = EVENTS.filter(e=>e.date>=todayISO).sort((a,b)=>a.date.localeCompare(b.date));
+$('#upcoming').innerHTML = upcoming.length ? upcoming.map(evHTML).join('') : '<p>New dates are added as the panchang is confirmed. Please check back soon.</p>';
+$('#home-events').innerHTML = upcoming.length ? upcoming.slice(0,3).map(evHTML).join('') : '<p style="margin:0">Every Monday: Somavara abhishekam. Special festival dates will be announced here.</p>';
+
+/* ---------- Donations ---------- */
+const df = $('#donate-form');
+$$('input[name=amt]').forEach(r=>r.addEventListener('change',()=>{const o=r.value==='other'&&r.checked;if(r.checked){$('#other-wrap').hidden=!o;if(o)$('#other-amt').focus()}}));
+$$('[data-cat]').forEach(a=>a.addEventListener('click',()=>{const r=$(`input[name=cat][value="${a.dataset.cat}"]`);if(r)r.checked=true}));
+df.addEventListener('submit',e=>{
+  e.preventDefault();
+  const err=$('#d-error'), v=n=>(df.querySelector(`input[name=${n}]:checked`)||{}).value;
+  let amt=v('amt'); if(amt==='other') amt=$('#other-amt').value;
+  const name=$('#d-name').value.trim(), phone=$('#d-phone').value.trim(), email=$('#d-email').value.trim();
+  let msg='';
+  if(!name) msg='Please enter your name.';
+  else if(!/^[+\d][\d\s-]{7,}$/.test(phone)) msg='Please enter a valid mobile number.';
+  else if(email && !/^\S+@\S+\.\S+$/.test(email)) msg='Please check your email address.';
+  else if(!(Number(amt)>=1)) msg='Please enter an amount of ₹1 or more.';
+  if(msg){err.textContent=msg;err.hidden=false;return}
+  err.hidden=true;
+  const amtTxt='₹'+Number(amt).toLocaleString('en-IN');
+  $('#t-name').textContent=name; $('#t-cat').textContent=v('cat'); $('#t-amt').textContent=amtTxt; $('#t-freq').textContent=v('freq');
+  $('#t-upi').textContent=CONFIG.upi; $('#t-bank').textContent=CONFIG.bank;
+  const note=$('#d-note').value.trim();
+  $('#t-wa').href=wa(`Namaste. I have made a donation to Siva Sadhanam Trust.\nName: ${name}\nMobile: ${phone}${email?'\nEmail: '+email:''}\nFor: ${v('cat')}\nAmount: ${amtTxt} (${v('freq')})${note?'\nSankalpam/message: '+note:''}`);
+  df.hidden=true; $('#thanks').classList.add('show'); $('#thanks').focus();
+  window.scrollTo({top:$('#donations').offsetTop,behavior:'smooth'});
+  if(CONFIG.paymentLink) window.open(CONFIG.paymentLink,'_blank','noopener');
+});
+$('#t-again').onclick=()=>{df.hidden=false;$('#thanks').classList.remove('show');df.reset();$('#other-wrap').hidden=true;$('#d-name').focus()};
+
+/* ---------- Gallery ---------- */
+const cats=['All',...new Set(GALLERY.map(g=>g.cat)),'Videos'];
+let filt='All';
+function renderGallery(){
+  $('#filters').innerHTML=cats.map(c=>`<button type="button" aria-pressed="${c===filt}" data-c="${c}">${c}</button>`).join('');
+  const items=GALLERY.map((g,i)=>({...g,i})).filter(g=>filt==='All'||(filt==='Videos'?g.t==='video':g.cat===filt));
+  $('#gallery-grid').innerHTML=items.map(g=>`<button class="tile" data-i="${g.i}" style="background:linear-gradient(150deg,${g.g[0]},${g.g[1]})" aria-label="Open ${g.t}: ${g.cap}">${g.src?`<img src="${g.src}" alt="${g.cap}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">`:MOTIFS[g.m]}${g.t==='video'?'<span class="badge">▶ Video</span>':''}<span class="cap">${g.cap}</span></button>`).join('');
+}
+$('#filters').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;filt=b.dataset.c;renderGallery()});
+const lb=$('#lightbox');
+$('#gallery-grid').addEventListener('click',e=>{
+  const t=e.target.closest('.tile');if(!t)return;const g=GALLERY[t.dataset.i];
+  const art=$('#lb-art');art.style.background=`linear-gradient(150deg,${g.g[0]},${g.g[1]})`;
+  art.innerHTML=g.src?`<img src="${g.src}" alt="${g.cap}" style="width:100%;height:100%;object-fit:cover">`:MOTIFS[g.m];
+  $('#lb-cap').textContent=g.cap;
+  $('#lb-sub').textContent=g.src?'':(g.t==='video'?'Video coming soon. Follow us on WhatsApp for updates.':'Photo coming soon.');
+  lb.showModal();
+});
+$('#lb-close').onclick=()=>lb.close();
+lb.addEventListener('click',e=>{if(e.target===lb)lb.close()});
+renderGallery();
+
+/* ---------- Contact form ---------- */
+$('#contact-form').addEventListener('submit',e=>{
+  e.preventDefault();
+  const n=$('#m-name').value.trim(), m=$('#m-msg').value.trim();
+  window.open(wa(`Namaste, this is ${n||'a devotee'}.\n${m}`),'_blank','noopener');
+});
+
+route();
+</script>
 </body>
 </html>
