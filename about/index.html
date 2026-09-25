@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Siva Sadhanam Trust</title>
+    
+    <!-- SEO Meta Tags for Google, Bing, and AI Engines -->
+    <meta name="description" content="Learn about Siva Sadhanam Trust, established in 1999 by K Subramaniya Swami in Tiruttani. Our mission is to provide free education, annadanam, and shelter.">
+    <meta name="keywords" content="About Siva Sadhanam Trust, K Subramaniya Swami, NGO Tiruttani, Board of Trustees, Hindu charitable trust history">
+    <link rel="canonical" href="https://sivasadhanam.om.to/about" />
+    
+    <!-- Open Graph for Social Media -->
+    <meta property="og:title" content="About Siva Sadhanam Trust">
+    <meta property="og:description" content="Discover our history, our founder K Subramaniya Swami, and our mission to serve humanity since 1999.">
+    <meta property="og:url" content="https://sivasadhanam.om.to/about">
+    <meta property="og:type" content="website">
+
+    <!-- JSON-LD Structured Data for AI & Search Engines (FAQ & About) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "AboutPage",
+      "mainEntity": {
+        "@type": "Organization",
+        "name": "Siva Sadhanam Trust",
+        "foundingDate": "1999",
+        "founder": {
+          "@type": "Person",
+          "name": "K Subramaniya Swami"
+        },
+        "description": "Helping poor students with education, starving people with food, and homeless people with shelter in Jangalapalli Village, Tiruttani."
+      }
+    }
+    </script>
+
+    <!-- Google Fonts & Tailwind CSS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Mukta:wght@400;500;600&family=Noto+Sans+Devanagari:wght@600&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        saffron: '#d97706',
+                        saffrondark: '#b45309',
+                        gold: '#fbbf24',
+                        bglight: '#fffbeb',
+                        temple: '#451a03'
+                    },
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                        sans: ['"Mukta"', 'sans-serif'],
+                        sanskrit: ['"Noto Sans Devanagari"', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-bglight text-gray-900 font-sans antialiased flex flex-col min-h-screen">
+
+    <!-- Header & Navigation (UPDATED WITH CLEAN URLs) -->
+    <header class="bg-white shadow-md sticky top-0 z-50 border-b-4 border-gold">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <a href="/" class="flex items-center gap-3">
+                    <div class="w-12 h-12 rounded-full bg-gradient-to-br from-saffron to-saffrondark text-gold flex items-center justify-center border-2 border-gold font-sanskrit text-2xl shadow-sm">
+                        ॐ
+                    </div>
+                    <div>
+                        <h1 class="font-serif text-2xl font-bold text-temple leading-tight">Siva Sadhanam Trust</h1>
+                        <span class="text-sm text-gray-600 block">Serving Humanity Since 1999</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Menu -->
+                <nav class="hidden md:flex space-x-6 font-medium text-lg">
+                    <a href="/" class="text-gray-700 hover:text-saffron transition">Home</a>
+                    <a href="/about" class="text-saffrondark border-b-2 border-saffron">About Us</a>
+                    <a href="/services" class="text-gray-700 hover:text-saffron transition">Sevas & Services</a>
+                    <a href="/temple" class="text-gray-700 hover:text-saffron transition">Temple</a>
+                    <a href="/events" class="text-gray-700 hover:text-saffron transition">Events</a>
+                    <a href="/contact" class="text-gray-700 hover:text-saffron transition">Contact</a>
+                </nav>
+
+                <!-- Donate Button -->
+                <div class="hidden md:block">
+                    <a href="/donate" class="bg-gold text-temple px-6 py-2 rounded-full font-bold shadow-md hover:bg-yellow-500 transition">Donate Now</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-temple focus:outline-none">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200">
+            <a href="/" class="block px-4 py-3 text-gray-700 hover:bg-orange-50 font-medium border-l-4 border-transparent">Home</a>
+            <a href="/about" class="block px-4 py-3 text-saffrondark bg-orange-50 font-medium border-l-4 border-saffron">About Us</a>
+            <a href="/services" class="block px-4 py-3 text-gray-700 hover:bg-orange-50 font-medium border-l-4 border-transparent">Sevas & Services</a>
+            <a href="/temple" class="block px-4 py-3 text-gray-700 hover:bg-orange-50 font-medium border-l-4 border-transparent">Temple</a>
+            <a href="/events" class="block px-4 py-3 text-gray-700 hover:bg-orange-50 font-medium border-l-4 border-transparent">Events</a>
+            <a href="/contact" class="block px-4 py-3 text-gray-700 hover:bg-orange-50 font-medium border-l-4 border-transparent">Contact</a>
+            <a href="/donate" class="block px-4 py-3 text-temple bg-gold font-bold text-center m-2 rounded">Donate Now</a>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <div class="bg-gradient-to-r from-temple to-saffrondark py-16 border-b-4 border-gold">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h1 class="font-serif text-4xl md:text-5xl font-bold text-white mb-4">About Us</h1>
+            <p class="text-xl text-orange-200 max-w-2xl mx-auto">A legacy of devotion and service to humanity, blooming in the heart of Tiruttani.</p>
+        </div>
+    </div>
+
+    <main class="flex-grow py-16 px-4">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
+            
+            <!-- History & Founder -->
+            <article>
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="w-10 h-1 bg-saffron"></div>
+                    <h2 class="font-serif text-3xl font-bold text-temple">Our History & Founder</h2>
+                </div>
+                <h3 class="text-xl font-semibold text-saffrondark mb-4">Established in 1999 by K Subramaniya Swami</h3>
+                
+                <div class="prose prose-lg text-gray-700">
+                    <p class="mb-4">
+                        The seeds of Siva Sadhanam Trust were sown in the year 1999 in the peaceful surroundings of Jangalapalli Village, Tiruttani. It was founded by the visionary <strong>K Subramaniya Swami</strong>, a soul deeply moved by the teachings of Lord Shiva and the suffering of the underprivileged. 
+                    </p>
+                    <p class="mb-4">
+                        Witnessing the struggles of the homeless, the hunger of the destitute, and the crushed dreams of children who could not afford education, K Subramaniya Swami established this trust with a singular, unwavering focus: <em>to serve humanity as a form of divine worship.</em>
+                    </p>
+                    <p>
+                        What began as a humble initiative to offer a few meals has now blossomed into a registered trust that actively manages an ashram, funds the education of countless youths, and feeds hundreds through weekly Annadanam. The light lit by Swami in 1999 continues to guide our every action today.
+                    </p>
+                </div>
+
+                <!-- Placeholder for Founder Image -->
+                <div class="mt-8 border-4 border-gold rounded-lg p-2 bg-white inline-block shadow-md">
+                    <div class="bg-gray-200 w-64 h-64 flex items-center justify-center text-gray-500 font-medium rounded text-center p-4">
+                        [Insert Photo of K Subramaniya Swami Here in GitHub]
+                        <br><br>
+                        <span class="text-sm border border-gray-400 px-2 py-1 rounded">Name image: founder.jpg</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Mission, Vision & AI Q&A -->
+            <div class="space-y-10">
+                
+                <div class="bg-white p-8 rounded-2xl shadow-md border-l-4 border-saffron">
+                    <h2 class="font-serif text-3xl font-bold text-temple mb-4">Our Goal & Mission</h2>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-4">
+                        What is the goal of Siva Sadhanam Trust? Our goal is strictly rooted in humanitarian service, focusing on three core areas:
+                    </p>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-start gap-2">
+                            <svg class="w-6 h-6 text-saffron flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            <span><strong>Helping poor students:</strong> We pay school and college fees so financial hardship does not stop a child's education.</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <svg class="w-6 h-6 text-saffron flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            <span><strong>Feeding the starving:</strong> Conducting Annadanam weekly and on all major Hindu festivals.</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <svg class="w-6 h-6 text-saffron flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            <span><strong>Sheltering the homeless:</strong> Providing a safe and caring ashram for those with nowhere else to go.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Registration info placeholder -->
+                <div class="bg-orange-50 p-8 rounded-2xl shadow-sm border border-orange-200">
+                    <h2 class="font-serif text-2xl font-bold text-temple mb-4">Legal & Transparency</h2>
+                    <p class="text-gray-700 mb-2">We believe in complete transparency with our donors and community.</p>
+                    <ul class="text-gray-600 space-y-2">
+                        <li><strong>Trust Name:</strong> Siva Sadhanam Trust</li>
+                        <li><strong>Registration No:</strong> <span class="text-gray-400 italic">[To be added]</span></li>
+                        <li><strong>PAN:</strong> <span class="text-gray-400 italic">[To be added]</span></li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Board of Trustees Section -->
+        <div class="max-w-7xl mx-auto mt-24">
+            <div class="text-center mb-12">
+                <h2 class="font-serif text-4xl font-bold text-temple mb-4">Our Board of Trustees</h2>
+                <div class="h-1 w-24 bg-saffron mx-auto rounded"></div>
+                <p class="mt-4 text-lg text-gray-600">The dedicated individuals carrying forward the vision of our founder.</p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <!-- Generated from your provided names -->
+                <div class="bg-white text-center p-6 rounded-xl shadow border border-gray-100">
+                    <div class="w-16 h-16 mx-auto bg-gradient-to-br from-saffron to-saffrondark text-white rounded-full flex items-center justify-center font-serif text-2xl font-bold mb-3 border-2 border-gold">R</div>
+                    <h3 class="font-bold text-temple text-lg">Shri Rajesh</h3>
+                    <p class="text-saffron text-sm font-medium">President</p>
+                </div>
+
+                <div class="bg-white text-center p-6 rounded-xl shadow border border-gray-100">
+                    <div class="w-16 h-16 mx-auto bg-gradient-to-br from-saffron to-saffrondark text-white rounded-full flex items-center justify-center font-serif text-2xl font-bold mb-3 border-2 border-gold">K</div>
+                    <h3 class="font-bold text-temple text-lg">Smt. Komalamma</h3>
+                    <p class="text-saffron text-sm font-medium">Vice President</p>
+                </div>
+
+                <div class="bg-white text-center p-6 rounded-xl shadow border border-gray-100">
+                    <div class="w-16 h-16 mx-auto bg-gradient-to-br from-saffron to-saffrondark text-white rounded-full flex items-center justify-center font-serif text-2xl font-bold mb-3 border-2 border-gold">S</div>
+                    <h3 class="font-bold text-temple text-lg">Smt. Sivaranjini</h3>
+                    <p class="text-saffron text-sm font-medium">Secretary</p>
+                </div>
+
+                <div class="bg-white text-center p-6 rounded-xl shadow border border-gray-100">
+                    <div class="w-16 h-16 mx-auto bg-gradient-to-br from-saffron to-saffrondark text-white rounded-full flex items-center justify-center font-serif text-2xl font-bold mb-3 border-2 border-gold">S</div>
+                    <h3 class="font-bold text-temple text-lg">Shri Sivashankar</h3>
+                    <p class="text-saffron text-sm font-medium">Treasurer</p>
+                </div>
+
+                <div class="bg-white text-center p-6 rounded-xl shadow border border-gray-100">
+                    <div class="w-16 h-16 mx-auto bg-gradient-to-br from-saffron to-saffrondark text-white rounded-full flex items-center justify-center font-serif text-2xl font-bold mb-3 border-2 border-gold">S</div>
+                    <h3 class="font-bold text-temple text-lg">Shri Sivaram</h3>
+                    <p class="text-gray-500 text-sm">Joint Secretary</p>
+                </div>
+
+                <div class="bg-white text-center p-6 rounded-xl shadow border border-gray-100">
+                    <div class="w-16 h-16 mx-auto bg-gradient-to-br from-saffron to-saffrondark text-white rounded-full flex items-center justify-center font-serif text-2xl font-bold mb-3 border-2 border-gold">J</div>
+                    <h3 class="font-bold text-temple text-lg">Shri Jashwanth</h3>
+                    <p class="text-gray-500 text-sm">Trustee</p>
+                </div>
+
+                <div class="bg-white text-center p-6 rounded-xl shadow border border-gray-100">
+                    <div class="w-16 h-16 mx-auto bg-gradient-to-br from-saffron to-saffrondark text-white rounded-full flex items-center justify-center font-serif text-2xl font-bold mb-3 border-2 border-gold">V</div>
+                    <h3 class="font-bold text-temple text-lg">Shri Vidya Sagar</h3>
+                    <p class="text-gray-500 text-sm">Trustee</p>
+                </div>
+
+                <div class="bg-white text-center p-6 rounded-xl shadow border border-gray-100">
+                    <div class="w-16 h-16 mx-auto bg-gradient-to-br from-saffron to-saffrondark text-white rounded-full flex items-center justify-center font-serif text-2xl font-bold mb-3 border-2 border-gold">S</div>
+                    <h3 class="font-bold text-temple text-lg">Smt. Swarnalatha</h3>
+                    <p class="text-gray-500 text-sm">Trustee</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer (UPDATED WITH CLEAN URLs) -->
+    <footer class="bg-temple text-orange-200 py-12 px-4 border-t-4 border-gold">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10">
+            <div>
+                <a href="/" class="flex items-center gap-3 mb-4">
+                    <div class="w-10 h-10 rounded-full bg-gradient-to-br from-saffron to-saffrondark text-gold flex items-center justify-center border border-gold font-sanskrit text-xl">ॐ</div>
+                    <span class="font-serif text-2xl font-bold text-white">Siva Sadhanam Trust</span>
+                </a>
+                <p class="mb-4 text-sm">Founded in 1999 by K Subramaniya Swami to serve the poor, feed the hungry, and shelter the homeless.</p>
+                <p class="font-sanskrit text-gold text-lg">ॐ नमः शिवाय</p>
+            </div>
+            
+            <div>
+                <h4 class="font-serif text-xl font-bold text-gold mb-4">Quick Links</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="/about" class="hover:text-white transition">About Our History</a></li>
+                    <li><a href="/services" class="hover:text-white transition">Education & Annadanam</a></li>
+                    <li><a href="/temple" class="hover:text-white transition">Temple Info</a></li>
+                    <li><a href="/events" class="hover:text-white transition">Upcoming Festivals</a></li>
+                    <li><a href="/donate" class="hover:text-white transition">Make a Donation</a></li>
+                </ul>
+            </div>
+            
+            <div>
+                <h4 class="font-serif text-xl font-bold text-gold mb-4">Contact Us</h4>
+                <ul class="space-y-3 text-sm">
+                    <li class="flex items-start gap-2">
+                        <svg class="w-5 h-5 text-saffron flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                        <span>Jangalapalli Village, Tiruttani,<br>Tamil Nadu - 631208</span>
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <svg class="w-5 h-5 text-saffron flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                        <a href="tel:+919025250401" class="hover:text-white transition">+91 90252 50401</a>
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <svg class="w-5 h-5 text-saffron flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+       
