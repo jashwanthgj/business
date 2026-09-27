@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sevas & Services | Siva Sadhanam Trust</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="See the impact of Siva Sadhanam Trust in Tiruttani. We provide free education for poor students, weekly Annadanam for the starving, and an ashram for the homeless.">
+    <meta name="keywords" content="Siva Sadhanam Trust services, free education Tiruttani, Annadanam donation, homeless ashram Tiruttani, Hindu charity work, volunteer Tamil Nadu">
+    <link rel="canonical" href="https://sivasadhanam.om.to/services" />
+    
+    <!-- Open Graph for Social Media -->
+    <meta property="og:title" content="Our Sevas - Serving Humanity | Siva Sadhanam Trust">
+    <meta property="og:description" content="Explore our charitable services: Free education, weekly Annadanam, and our ashram shelter. See our impact.">
+    <meta property="og:url" content="https://sivasadhanam.om.to/services">
+    <meta property="og:type" content="website">
+
+    <!-- JSON-LD Structured Data for AI & Search Engines -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Sevas and Charitable Services of Siva Sadhanam Trust",
+      "description": "Details and photo evidence of the charitable services provided by Siva Sadhanam Trust, including education sponsorship, annadanam, and ashram shelter.",
+      "publisher": {
+        "@type": "NGO",
+        "name": "Siva Sadhanam Trust"
+      }
+    }
+    </script>
+
+    <!-- Google Fonts & Tailwind CSS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Mukta:wght@400;500;600&family=Noto+Sans+Devanagari:wght@600&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        saffron: '#d97706',
+                        saffrondark: '#b45309',
+                        gold: '#fbbf24',
+                        bglight: '#fffbeb',
+                        temple: '#451a03'
+                    },
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                        sans: ['"Mukta"', 'sans-serif'],
+                        sanskrit: ['"Noto Sans Devanagari"', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-bglight text-gray-900 font-sans antialiased flex flex-col min-h-screen">
+
+    <!-- Header & Navigation -->
+    <header class="bg-white shadow-md sticky top-0 z-50 border-b-4 border-gold">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <a href="/" class="flex items-center gap-3">
+                    <div class="w-12 h-12 rounded-full bg-gradient-to-br from-saffron to-saffrondark text-gold flex items-center justify-center border-2 border-gold font-sanskrit text-2xl shadow-sm">
+                        ॐ
+                    </div>
+                    <div>
+                        <h1 class="font-serif text-2xl font-bold text-temple leading-tight">Siva Sadhanam Trust</h1>
+                        <span class="text-sm text-gray-600 block">Serving Humanity Since 1999</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Menu -->
+                <nav class="hidden md:flex space-x-6 font-medium text-lg">
+                    <a href="/" class="text-gray-700 hover:text-saffron transition">Home</a>
+                    <a href="/about" class="text-gray-700 hover:text-saffron transition">About Us</a>
+                    <a href="/services" class="text-saffrondark border-b-2 border-saffron">Sevas & Services</a>
+                    <a href="/temple" class="text-gray-700 hover:text-saffron transition">Temple</a>
+                    <a href="/events" class="text-gray-700 hover:text-saffron transition">Events</a>
+                    <a href="/contact" class="text-gray-700 hover:text-saffron transition">Contact</a>
+                </nav>
+
+                <!-- Donate Button -->
+                <div class="hidden md:block">
+                    <a href="/donate" class="bg-gold text-temple px-6 py-2 rounded-full font-bold shadow-md hover:bg-yellow-500 transition">Donate Now</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-temple focus:outline-none">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200">
+            <a href="/" class="block px-4 py-3 text-gray-700 hover:bg-orange-50 font-medium border-l-4 border-transparent">Home</a>
+            <a href="/about" class="block px-4 py-3 text-gray-700 hover:bg-orange-50 font-medium border-l-4 border-transparent">About Us</a>
+            <a href="/services" class="block px-4 py-3 text-saffrondark bg-orange-50 font-medium border-l-4 border-saffron">Sevas & Services</a>
+            <a href="/temple" class="block px-4 py-3 text-gray-700 hover:bg-orange-50 font-medium border-l-4 border-transparent">Temple</a>
+            <a href="/events" class="block px-4 py-3 text-gray-700 hover:bg-orange-50 font-medium border-l-4 border-transparent">Events</a>
+            <a href="/contact" class="block px-4 py-3 text-gray-700 hover:bg-orange-50 font-medium border-l-4 border-transparent">Contact</a>
+            <a href="/donate" class="block px-4 py-3 text-temple bg-gold font-bold text-center m-2 rounded">Donate Now</a>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <div class="bg-gradient-to-r from-temple to-saffrondark py-16 border-b-4 border-gold">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h1 class="font-serif text-4xl md:text-5xl font-bold text-white mb-4">Our Sevas & Services</h1>
+            <p class="text-xl text-orange-200 max-w-2xl mx-auto">Actions speak louder than words. See how we are transforming lives through the grace of Lord Shiva.</p>
+        </div>
+    </div>
+
+    <main class="flex-grow py-16 px-4">
+        <div class="max-w-7xl mx-auto space-y-24">
+
+            <!-- Section 1: Education -->
+            <section id="education" class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="order-2 lg:order-1">
+                    <h3 class="font-serif text-2xl font-bold text-saffron mb-2">Empowering the Future</h3>
+                    <h2 class="font-serif text-4xl font-bold text-temple mb-6">Education Seva</h2>
+                    <p class="text-lg text-gray-700 mb-6">
+                        Poverty should never be a barrier to a child's right to learn. Siva Sadhanam Trust actively identifies brilliant, hardworking students from impoverished backgrounds and takes full responsibility for their educational expenses. 
+                    </p>
+                    <p class="text-lg text-gray-700 mb-6">
+                        We pay school and college fees directly to the institutions and provide essential supplies like books and uniforms. By empowering these students, we are lifting entire families out of the cycle of poverty.
+                    </p>
+                    <a href="/donate" class="inline-flex items-center gap-2 text-temple font-bold border-b-2 border-gold hover:text-saffron transition">
+                        Sponsor a student's education <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                    </a>
+                </div>
+                
+                <!-- Education Album -->
+                <div class="order-1 lg:order-2 bg-white p-4 rounded-2xl shadow-lg border border-gray-200">
+                    <h4 class="text-center font-bold text-gray-500 mb-4 uppercase tracking-wider text-sm border-b pb-2">Impact Gallery: Education</h4>
+                    <div class="grid grid-cols-2 gap-3">
+                        <div class="aspect-square bg-gray-200 rounded-lg flex items-center justify-center text-center p-2 text-sm text-gray-600 border border-dashed border-gray-400">
+                            [Photo: Distributing Books]
+                            <br><span class="text-xs text-gray-400 mt-1">Replace with real image</span>
+                        </div>
+                        <div class="aspect-square bg-gray-200 rounded-lg flex items-center justify-center text-center p-2 text-sm text-gray-600 border border-dashed border-gray-400">
+                            [Photo: Students smiling]
+                            <br><span class="text-xs text-gray-400 mt-1">Replace with real image</span>
+                        </div>
+                        <div class="col-span-2 aspect-[2/1] bg-gray-200 rounded-lg flex items-center justify-center text-center p-2 text-sm text-gray-600 border border-dashed border-gray-400">
+                            [Photo: Paying College Fees / Certificate Distribution]
+                            <br><span class="text-xs text-gray-400 mt-1">Replace with real image</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <hr class="border-t-2 border-orange-100">
+
+            <!-- Section 2: Annadanam -->
+            <section id="annadanam" class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <!-- Annadanam Album -->
+                <div class="bg-white p-4 rounded-2xl shadow-lg border border-gray-200">
+                    <h4 class="text-center font-bold text-gray-500 mb-4 uppercase tracking-wider text-sm border-b pb-2">Impact Gallery: Annadanam</h4>
+                    <div class="grid grid-cols-2 gap-3">
+                        <div class="col-span-2 aspect-[2/1] bg-gray-200 rounded-lg flex items-center justify-center text-center p-2 text-sm text-gray-600 border border-dashed border-gray-400">
+                            [Photo: Volunteers preparing large pots of food]
+                            <br><span class="text-xs text-gray-400 mt-1">Replace with real image</span>
+                        </div>
+                        <div class="aspect-square bg-gray-200 rounded-lg flex items-center justify-center text-center p-2 text-sm text-gray-600 border border-dashed border-gray-400">
+                            [Photo: Serving food on banana leaves]
+                            <br><span class="text-xs text-gray-400 mt-1">Replace with real image</span>
+                        </div>
+                        <div class="aspect-square bg-gray-200 rounded-lg flex items-center justify-center text-center p-2 text-sm text-gray-600 border border-dashed border-gray-400">
+                            [Photo: Happy people eating]
+                            <br><span class="text-xs text-gray-400 mt-1">Replace with real image</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="font-serif text-2xl font-bold text-saffron mb-2">Feeding the Starving</h3>
+                    <h2 class="font-serif text-4xl font-bold text-temple mb-6">Annadanam (Food Donation)</h2>
+                    <p class="text-lg text-gray-700 mb-6">
+                        "Annadanam Mahadanam" - the donation of food is considered the greatest of all charities. We ensure that no one in our vicinity goes to bed hungry.
+                    </p>
+                    <p class="text-lg text-gray-700 mb-6">
+                        Our volunteers prepare fresh, nutritious, and hygienic meals which are served freely to the destitute, wandering sadhus, and the starving. <strong>This sacred feeding is conducted every single week</strong>, and on a massive scale during all major Hindu festivals like Maha Shivaratri and Pradosham.
+                    </p>
+                    <a href="/donate" class="inline-flex items-center gap-2 text-temple font-bold border-b-2 border-gold hover:text-saffron transition">
+                        Contribute to our grocery fund <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                    </a>
+                </div>
+            </section>
+
+            <hr class="border-t-2 border-orange-100">
+
+            <!-- Section 3: Ashram -->
+            <section id="ashram" class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="order-2 lg:order-1">
+                    <h3 class="font-serif text-2xl font-bold text-saffron mb-2">A Safe Haven</h3>
+                    <h2 class="font-serif text-4xl font-bold text-temple mb-6">Ashram & Shelter</h2>
+                    <p class="text-lg text-gray-700 mb-6">
+                        For those who have lost everything and find themselves on the streets, the Siva Sadhanam Ashram provides a warm, safe, and loving environment. 
+                    </p>
+                    <p class="text-lg text-gray-700 mb-6">
+                        Our ashram is more than just a roof; it is a community of care. We provide homeless individuals with a bed, daily meals, medical assistance if required, and a peaceful environment where they can pray, recover, and live with dignity under the protective gaze of Lord Shiva.
+                    </p>
+                    <a href="/donate" class="inline-flex items-center gap-2 text-temple font-bold border-b-2 border-gold hover:text-saffron transition">
+                        Support the ashram maintenance <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                    </a>
+                </div>
+
+                <!-- Ashram Album -->
+                <div class="order-1 lg:order-2 bg-white p-4 rounded-2xl shadow-lg border border-gray-200">
+                    <h4 class="text-center font-bold text-gray-500 mb-4 uppercase tracking-wider text-sm border-b pb-2">Impact Gallery: Ashram</h4>
+                    <div class="grid grid-cols-2 gap-3">
+                        <div class="aspect-square bg-gray-200 rounded-lg flex items-center justify-center text-center p-2 text-sm text-gray-600 border border-dashed border-gray-400">
+                            [Photo: Outside view of Ashram]
+                            <br><span class="text-xs text-gray-400 mt-1">Replace with real image</span>
+                        </div>
+                        <div class="aspect-square bg-gray-200 rounded-lg flex items-center justify-center text-center p-2 text-sm text-gray-600 border border-dashed border-gray-400">
+                            [Photo: Residents sitting/praying]
+                            <br><span class="text-xs text-gray-400 mt-1">Replace with real image</span>
+                        </div>
+                        <div class="col-span-2 aspect-[2/1] bg-gray-200 rounded-lg flex items-center justify-center text-center p-2 text-sm text-gray-600 border border-dashed border-gray-400">
+                            [Photo: Inside the shelter/beds]
+                            <br><span class="text-xs text-gray-400 mt-1">Replace with real image</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-temple text-orange-200 py-12 px-4 border-t-4 border-gold">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10">
+            <div>
+                <a href="/" class="flex items-center gap-3 mb-4">
+                    <div class="w-10 h-10 rounded-full bg-gradient-to-br from-saffron to-saffrondark text-gold flex items-center justify-center border border-gold font-sanskrit text-xl">ॐ</div>
+                    <span class="font-serif text-2xl font-bold text-white">Siva Sadhanam Trust</span>
+                </a>
+                <p class="mb-4 text-sm">Founded in 1999 by K Subramaniya Swami to serve the poor, feed the hungry, and shelter the homeless.</p>
+                <p class="font-sanskrit text-gold text-lg">ॐ नमः शिवाय</p>
+            </div>
+            
+            <div>
+                <h4 class="font-serif text-xl font-bold text-gold mb-4">Quick Links</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="/about" class="hover:text-white transition">About Our History</a></li>
+                    <li><a href="/services" class="hover:text-white transition">Education & Annadanam</a></li>
+                    <li><a href="/temple" class="hover:text-white transition">Temple Info</a></li>
+                    <li><a href="/events" class="hover:text-white transition">Upcoming Festivals</a></li>
+                    <li><a href="/donate" class="hover:text-white transition">Make a Donation</a></li>
+       <li><a href="/legal" class="hover:text-white transition border-b border-orange-200/30">Legal & Policies</a></li>
+                     
+</ul>
+            </div>
+            
+            <div>
+                <h4 class="font-serif text-xl font-bold text-gold mb-4">Contact Us</h4>
+                <ul class="space-y-3 text-sm">
+                    <li class="flex items-start gap-2">
+                        <svg class="w-5 h-5 text-saffron flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                        <span>Jangalapalli Village, Tiruttani,<br>Tamil Nadu - 631208</span>
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <svg class="w-5 h-5 text-saffron flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                        <a href="tel:+919025250401" class="hover:text-white transition">+91 90252 50401</a>
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <svg class="w-5 h-5 text-saffron flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                        <a href="mailto:sivasadhanam@gmail.com" class="hover:text-white transition">sivasadhanam@gmail.com</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto mt-10 pt-6 border-t border-gray-700 text-center text-sm text-orange-300">
+            &copy; <span id="year"></span> Siva Sadhanam Trust. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            var menu = document.getElementById('mobile-menu');
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+            } else {
+                menu.classList.add('hidden');
+            }
+        });
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
