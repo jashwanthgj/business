@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events & Festivals | Siva Sadhanam Trust</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Join Siva Sadhanam Trust in Tiruttani for upcoming Hindu festivals, Maha Shivaratri, Pradosham, Karthigai Deepam, and our weekly Annadanam drives.">
+    <meta name="keywords" content="Maha Shivaratri Tiruttani, Pradosham dates, Hindu festivals Tamil Nadu, Siva Sadhanam Trust events, Annadanam schedule">
+    <link rel="canonical" href="https://sivasadhanam.om.to/events" />
+    
+    <!-- Open Graph for Social Media -->
+    <meta property="og:title" content="Events & Festivals | Siva Sadhanam Trust">
+    <meta property="og:description" content="Celebrate with our community. Discover upcoming festivals and Annadanam drives at our temple.">
+    <meta property="og:url" content="https://sivasadhanam.om.to/events">
+    <meta property="og:type" content="website">
+
+    <!-- JSON-LD Structured Data for Events -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Event",
+      "name": "Weekly Annadanam Drive",
+      "description": "Massive free food distribution (Annadanam) for the poor and homeless.",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "location": {
+        "@type": "Place",
+        "name": "Siva Sadhanam Trust",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Jangalapalli Village",
+          "addressLocality": "Tiruttani",
+          "addressRegion": "Tamil Nadu",
+          "postalCode": "631208",
+          "addressCountry": "IN"
+        }
+      },
+      "organizer": {
+        "@type": "NGO",
+        "name": "Siva Sadhanam Trust",
+        "url": "https://sivasadhanam.om.to/"
+      }
+    }
+    </script>
+
+    <!-- Google Fonts & Tailwind CSS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Mukta:wght@400;500;600&family=Noto+Sans+Devanagari:wght@600&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { saffron: '#d97706', saffrondark: '#b45309', gold: '#fbbf24', bglight: '#fffbeb', temple: '#451a03' },
+                    fontFamily: { serif: ['"Cormorant Garamond"', 'serif'], sans: ['"Mukta"', 'sans-serif'], sanskrit: ['"Noto Sans Devanagari"', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-bglight text-gray-900 font-sans antialiased flex flex-col min-h-screen">
+
+    <!-- Header & Navigation -->
+    <header class="bg-white shadow-md sticky top-0 z-50 border-b-4 border-gold">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <a href="/" class="flex items-center gap-3">
+                    <div class="w-12 h-12 rounded-full bg-gradient-to-br from-saffron to-saffrondark text-gold flex items-center justify-center border-2 border-gold font-sanskrit text-2xl shadow-sm">ॐ</div>
+                    <div>
+                        <h1 class="font-serif text-2xl font-bold text-temple leading-tight">Siva Sadhanam Trust</h1>
+                        <span class="text-sm text-gray-600 block">Serving Humanity Since 1999</span>
+                    </div>
+                </a>
+                <nav class="hidden md:flex space-x-6 font-medium text-lg">
+                    <a href="/" class="text-gray-700 hover:text-saffron transition">Home</a>
+                    <a href="/about" class="text-gray-700 hover:text-saffron transition">About Us</a>
+                    <a href="/services" class="text-gray-700 hover:text-saffron transition">Sevas & Services</a>
+                    <a href="/temple" class="text-gray-700 hover:text-saffron transition">Temple</a>
+                    <a href="/events" class="text-saffrondark border-b-2 border-saffron">Events</a>
+                    <a href="/contact" class="text-gray-700 hover:text-saffron transition">Contact</a>
+                </nav>
+                <div class="hidden md:block">
+                    <a href="/donate" class="bg-gold text-temple px-6 py-2 rounded-full font-bold shadow-md hover:bg-yellow-500 transition">Donate Now</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-temple focus:outline-none"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg></button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200">
+            <a href="/" class="block px-4 py-3 text-gray-700 font-medium">Home</a>
+            <a href="/about" class="block px-4 py-3 text-gray-700 font-medium">About Us</a>
+            <a href="/services" class="block px-4 py-3 text-gray-700 font-medium">Sevas & Services</a>
+            <a href="/temple" class="block px-4 py-3 text-gray-700 font-medium">Temple</a>
+            <a href="/events" class="block px-4 py-3 text-saffrondark bg-orange-50 font-medium border-l-4 border-saffron">Events</a>
+            <a href="/contact" class="block px-4 py-3 text-gray-700 font-medium">Contact</a>
+            <a href="/donate" class="block px-4 py-3 text-temple bg-gold font-bold text-center m-2 rounded">Donate Now</a>
+        </div>
+    </header>
+
+    <div class="bg-gradient-to-r from-temple to-saffrondark py-16 border-b-4 border-gold">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h1 class="font-serif text-4xl md:text-5xl font-bold text-white mb-4">Events & Festivals</h1>
+            <p class="text-xl text-orange-200 max-w-2xl mx-auto">Come celebrate with the community. Everyone is welcome.</p>
+        </div>
+    </div>
+
+    <main class="flex-grow py-16 px-4">
+        <div class="max-w-7xl mx-auto">
+            
+            <!-- Ongoing/Weekly Events -->
+            <div class="mb-16">
+                <div class="flex items-center gap-3 mb-8 justify-center">
+                    <div class="w-12 h-1 bg-saffron"></div>
+                    <h2 class="font-serif text-3xl md:text-4xl font-bold text-temple">Weekly Regular Events</h2>
+                    <div class="w-12 h-1 bg-saffron"></div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-white p-8 rounded-2xl shadow border border-gray-200 flex flex-col items-center text-center">
+                        <div class="w-16 h-16 bg-orange-100 text-saffron rounded-full flex items-center justify-center mb-4">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold text-temple mb-2">Somavara (Monday) Puja</h3>
+                        <p class="text-gray-600">Every Monday is dedicated to Lord Shiva. We hold special evening Abhishekam, Deepa Aradhana, and collective chanting of the Panchakshara Mantra.</p>
+                    </div>
+
+                    <div class="bg-white p-8 rounded-2xl shadow border border-gray-200 flex flex-col items-center text-center">
+                        <div class="w-16 h-16 bg-orange-100 text-saffron rounded-full flex items-center justify-center mb-4">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold text-temple mb-2">Weekly Annadanam Drive</h3>
+                        <p class="text-gray-600">Our volunteers gather to cook and distribute hundreds of meals to the poor and destitute in and around Tiruttani. Want to volunteer? Join us.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Major Festivals Grid -->
+            <div>
+                <div class="flex items-center gap-3 mb-8 justify-center">
+                    <div class="w-12 h-1 bg-saffron"></div>
+                    <h2 class="font-serif text-3xl md:text-4xl font-bold text-temple">Major Festivals Celebrated</h2>
+                    <div class="w-12 h-1 bg-saffron"></div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <article class="bg-white p-6 rounded-xl border-t-4 border-gold shadow-sm hover:shadow-md transition">
+                        <h4 class="font-serif text-2xl font-bold text-temple mb-2">Maha Shivaratri</h4>
+                        <p class="text-gray-600">The Great Night of Shiva. Devotees fast and keep an all-night vigil with four prahar pujas, continuous abhishekam, and bhajans. Massive Annadanam is organized the following morning.</p>
+                    </article>
+
+                    <article class="bg-white p-6 rounded-xl border-t-4 border-gold shadow-sm hover:shadow-md transition">
+                        <h4 class="font-serif text-2xl font-bold text-temple mb-2">Pradosham</h4>
+                        <p class="text-gray-600">Observed twice every lunar month on Trayodashi (13th day). We perform special abhishekam and twilight worship of Nandi and Shiva to absolve karma.</p>
+                    </article>
+
+                    <article class="bg-white p-6 rounded-xl border-t-4 border-gold shadow-sm hover:shadow-md transition">
+                        <h4 class="font-serif text-2xl font-bold text-temple mb-2">Karthigai Deepam</h4>
+                        <p class="text-gray-600">The festival of lights, honoring Lord Shiva as the endless flame of consciousness. The entire trust premises are illuminated with rows of oil lamps.</p>
+                    </article>
+
+                    <article class="bg-white p-6 rounded-xl border-t-4 border-gold shadow-sm hover:shadow-md transition">
+                        <h4 class="font-serif text-2xl font-bold text-temple mb-2">Annabhishekam</h4>
+                        <p class="text-gray-600">During the Tamil month of Aippasi, the Shiva Linga is grandly adorned entirely with cooked rice, which is later distributed as sacred prasadam to the hungry.</p>
+                    </article>
+                    
+                    <article class="bg-white p-6 rounded-xl border-t-4 border-gold shadow-sm hover:shadow-md transition">
+                        <h4 class="font-serif text-2xl font-bold text-temple mb-2">Thiruvathirai (Arudra Darshan)</h4>
+                        <p class="text-gray-600">Celebrated in Margazhi month, honoring the cosmic dance of Lord Nataraja. Special dawn abhishekam and Kali (sweet dish) offering are held.</p>
+                    </article>
+
+                    <article class="bg-white p-6 rounded-xl border-t-4 border-gold shadow-sm hover:shadow-md transition">
+                        <h4 class="font-serif text-2xl font-bold text-temple mb-2">Karthika Masa Somavaram</h4>
+                        <p class="text-gray-600">Mondays of the sacred month of Karthika are celebrated with grand lamp offerings (Deepa Seva), Rudrabhishekam, and mass chanting.</p>
+                    </article>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-temple text-orange-200 py-12 px-4 border-t-4 border-gold">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10">
+            <div>
+                <a href="/" class="flex items-center gap-3 mb-4">
+                    <div class="w-10 h-10 rounded-full bg-gradient-to-br from-saffron to-saffrondark text-gold flex items-center justify-center border border-gold font-sanskrit text-xl">ॐ</div>
+                    <span class="font-serif text-2xl font-bold text-white">Siva Sadhanam Trust</span>
+                </a>
+                <p class="mb-4 text-sm">Founded in 1999 by K Subramaniya Swami to serve the poor, feed the hungry, and shelter the homeless.</p>
+                <p class="font-sanskrit text-gold text-lg">ॐ नमः शिवाय</p>
+            </div>
+            
+            <div>
+                <h4 class="font-serif text-xl font-bold text-gold mb-4">Quick Links</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="/about" class="hover:text-white transition">About Our History</a></li>
+                    <li><a href="/services" class="hover:text-white transition">Education & Annadanam</a></li>
+                    <li><a href="/temple" class="hover:text-white transition">Temple Info</a></li>
+                    <li><a href="/events" class="hover:text-white transition">Upcoming Festivals</a></li>
+                    <li><a href="/donate" class="hover:text-white transition">Make a Donation</a></li>
+<li><a href="/legal" class="hover:text-white transition border-b border-orange-200/30">Legal & Policies</a></li>
+            
+                </ul>
+            </div>
+            
+            <div>
+                <h4 class="font-serif text-xl font-bold text-gold mb-4">Contact Us</h4>
+                <ul class="space-y-3 text-sm">
+                    <li class="flex items-start gap-2">
+                        <svg class="w-5 h-5 text-saffron flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                        <span>Jangalapalli Village, Tiruttani,<br>Tamil Nadu - 631208</span>
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <svg class="w-5 h-5 text-saffron flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                        <a href="tel:+919025250401" class="hover:text-white transition">+91 90252 50401</a>
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <svg class="w-5 h-5 text-saffron flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                        <a href="mailto:sivasadhanam@gmail.com" class="hover:text-white transition">sivasadhanam@gmail.com</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto mt-10 pt-6 border-t border-gray-700 text-center text-sm text-orange-300">
+            &copy; <span id="year"></span> Siva Sadhanam Trust. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            var menu = document.getElementById('mobile-menu');
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+            } else {
+                menu.classList.add('hidden');
+            }
+        });
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
