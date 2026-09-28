@@ -305,17 +305,43 @@
         </div>
     </footer>
 
-    <!-- Fixed Mobile Script -->
+        <!-- Scripts -->
     <script>
-        const btn = document.getElementById('mobile-menu-btn');
-        const menu = document.getElementById('mobile-menu');
-        
-        btn.addEventListener('click', () => {
-            menu.classList.toggle('hidden');
+        // Mobile Menu Toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            var menu = document.getElementById('mobile-menu');
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+            } else {
+                menu.classList.add('hidden');
+            }
         });
-
+        
+        // Dynamic Year
         document.getElementById('year').textContent = new Date().getFullYear();
+
+        // WhatsApp Form Logic - FIXED FOR POPUP BLOCKERS
+        function sendWhatsApp(e) {
+            e.preventDefault(); // Prevent page reload
+            
+            const name = document.getElementById('name').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+            
+            // Format the message and securely encode it for URLs
+            const text = "Namaste! My name is " + encodeURIComponent(name) + ".%0A%0A*Subject:* " + encodeURIComponent(subject) + "%0A*Message:* " + encodeURIComponent(message);
+            
+            // Your Trust's WhatsApp Number
+            const phone = "919025250401";
+            
+            // Construct the WhatsApp URL
+            const url = "https://wa.me/" + phone + "?text=" + text;
+            
+            // Redirect in the same tab to bypass strict pop-up blockers
+            window.location.href = url;
+        }
     </script>
+    
 </body>
 </html>
        
